@@ -1,16 +1,4 @@
 {
-  "version": 2,
-  "framework": null,
-  "rewrites": [
-    {
-      "source": "/(classes.*|diagnostic.*|plan.*|tutor.*|evaluate.*|teacher.*|api.*|docs.*|openapi.json)",
-      "destination": "/api/index.py"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

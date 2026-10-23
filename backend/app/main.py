@@ -256,7 +256,11 @@ def health_check():
 # 8. Web Client & PWA Static Files Mounting
 # ==========================================
 
-frontend_dir = Path(__file__).resolve().parent.parent.parent / "frontend" / "public"
+root_dir = Path(__file__).resolve().parent.parent.parent
+frontend_dir = root_dir / "frontend" / "public"
+if not frontend_dir.exists():
+    frontend_dir = root_dir / "public"
+
 if frontend_dir.exists():
     app.mount("/static", StaticFiles(directory=str(frontend_dir)), name="static")
 

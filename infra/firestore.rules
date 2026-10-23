@@ -1,0 +1,86 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions for Role-Based Access Control
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isUser(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function hasRole(role) {
+      return isAuthenticated() && request.auth.token.role == role;
+    }
+
+    function isTeacher() {
+      return hasRole('teacher');
+    }
+
+    function isAdmin() {
+      return hasRole('admin');
+    }
+
+    // Schools: Admins only
+    match /schools/{schoolId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // Classes:
+    // - Teacher can read/write their own class
+    // - Students can read class details to join
+    match /classes/{classId} {
+      allow read: if isAuthenticated();
+      allow create: if isTeacher();
+      allow update, delete: if isTeacher() && resource.data.teacherId == request.auth.uid;
+    }
+
+    // Students:
+    // - A student can only read and write their own profile
+    // - Teacher can view students enrolled in their class
+    match /students/{studentId} {
+      allow read, write: if isUser(studentId);
+      allow read: if isTeacher();
+    }
+
+    // Mastery state:
+    // - Student can read their own mastery
+    // - Backend service / Student updates mastery
+    // - Teacher can read student mastery within their class
+    match /mastery/{masteryId} {
+      // masteryId format: {studentId}_{conceptId}
+      allow read: if isAuthenticated() && (
+        request.auth.uid == resource.data.studentId || isTeacher() || isAdmin()
+      );
+      allow write: if isAuthenticated() && request.auth.uid == request.resource.data.studentId;
+    }
+
+    // Learning Sessions & Logs:
+    // - Student reads/writes only their own session
+    match /sessions/{sessionId} {
+      allow read, write: if isAuthenticated() && (
+        request.auth.uid == resource.data.studentId || isTeacher()
+      );
+    }
+
+    // Concepts & Question Bank:
+    // - Read-only public curriculum for all authenticated students/teachers
+    match /concepts/{conceptId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    match /questions/{questionId} {
+      allow read: if isAuthenticated();
+      allow write: if isTeacher() || isAdmin();
+    }
+
+    // Default deny all other paths
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

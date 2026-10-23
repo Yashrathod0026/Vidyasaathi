@@ -1,0 +1,895 @@
+[
+  {
+    "id": "int_basic",
+    "name": {
+      "en": "Integers: Representation & Number Line",
+      "hi": "पूर्णांक: संख्या रेखा पर निरूपण",
+      "mr": "पूर्णांक: संख्या रेषेवर सादरीकरण"
+    },
+    "grade": 7,
+    "prerequisites": [],
+    "description": {
+      "en": "Understanding positive and negative integers, absolute value, and their positions on a horizontal number line.",
+      "hi": "धनात्मक और ऋणात्मक पूर्णांक, निरपेक्ष मान और संख्या रेखा पर उनकी स्थिति को समझना।",
+      "mr": "धन आणि ऋण पूर्णांक, केवल मूल्य आणि संख्या रेषेवरील त्यांचे स्थान समजून घेणे."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_int_magnitude_neg",
+        "name": {
+          "en": "Larger digit means larger negative number",
+          "hi": "बड़ा अंक मतलब बड़ा ऋणात्मक मान",
+          "mr": "मोठा अंक म्हणजे मोठी ऋण संख्या असा गैरसमज"
+        },
+        "description": {
+          "en": "Thinking that -8 is greater than -2 because 8 is greater than 2.",
+          "hi": "यह सोचना कि -8 का मान -2 से बड़ा है क्योंकि 8, 2 से बड़ा होता है।",
+          "mr": "-८ हे -२ पेक्षा मोठे आहे असा समज कारण ८ हे २ पेक्षा मोठे आहे."
+        },
+        "remedial_tip": {
+          "en": "Remind that numbers further left on the number line are always smaller.",
+          "hi": "समझाएं कि संख्या रेखा पर जो संख्या बाईं ओर होती है वह हमेशा छोटी होती है।",
+          "mr": "संख्या रेषेवर डावीकडील संख्या नेहमी लहान असते हे दाखवा."
+        }
+      }
+    ]
+  },
+  {
+    "id": "int_add_sub",
+    "name": {
+      "en": "Addition & Subtraction of Integers",
+      "hi": "पूर्णांकों का जोड़ और घटाव",
+      "mr": "पूर्णांकांची बेरीज आणि वजाबाकी"
+    },
+    "grade": 7,
+    "prerequisites": ["int_basic"],
+    "description": {
+      "en": "Adding and subtracting numbers with same and different signs, understanding double negatives.",
+      "hi": "समान और विपरीत चिन्ह वाले पूर्णांकों को जोड़ना और घटाना, तथा दोहरे ऋण चिन्ह का नियम।",
+      "mr": "समान व विरुद्ध चिन्हांकित पूर्णांकांची बेरीज-वजाबाकी आणि दुहेरी ऋण चिन्हाचा नियम."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_int_sign_add",
+        "name": {
+          "en": "Always subtracting when seeing a minus sign",
+          "hi": "माइनस देखते ही हमेशा घटा देना",
+          "mr": "वजा चिन्ह दिसताच नेहमी वजाबाकी करणे"
+        },
+        "description": {
+          "en": "Calculating (-5) + (-3) as -2 or +2 instead of -8.",
+          "hi": "(-5) + (-3) को -8 की जगह -2 या +2 लिखना।",
+          "mr": "(-५) + (-३) चे उत्तर -८ ऐवजी -२ किंवा +२ काढणे."
+        },
+        "remedial_tip": {
+          "en": "Use debt/credit analogy: borrowing ₹5 and borrowing ₹3 means total debt of ₹8.",
+          "hi": "कर्ज का उदाहरण दें: ₹5 उधार और फिर ₹3 उधार मतलब कुल ₹8 का कर्ज।",
+          "mr": "कर्जाचे उदाहरण द्या: ५ रुपये उसने आणि ३ रुपये उसने म्हणजे एकूण ८ रुपये कर्ज."
+        }
+      },
+      {
+        "id": "misc_double_negative",
+        "name": {
+          "en": "Confusing subtraction of negative with addition of negative",
+          "hi": "ऋणात्मक घटाव को ऋणात्मक जोड़ समझना",
+          "mr": "ऋण वजाबाकी आणि ऋण बेरीज यातील गोंधळ"
+        },
+        "description": {
+          "en": "Computing 5 - (-3) as 2 instead of 8.",
+          "hi": "5 - (-3) को 8 की जगह 2 निकालना।",
+          "mr": "५ - (-३) चे उत्तर ८ ऐवजी २ काढणे."
+        },
+        "remedial_tip": {
+          "en": "Taking away a debt is giving wealth: minus of minus becomes plus.",
+          "hi": "कर्ज माफ करने का अर्थ लाभ होना है: माइनस और माइनस मिलकर प्लस बनता है।",
+          "mr": "कर्ज काढून घेणे म्हणजे फायदा: वजा वजा मिळून अधिक होते."
+        }
+      }
+    ]
+  },
+  {
+    "id": "int_mul_div",
+    "name": {
+      "en": "Multiplication & Division of Integers",
+      "hi": "पूर्णांकों का गुणा और भाग",
+      "mr": "पूर्णांकांचा गुणाकार आणि भागाकार"
+    },
+    "grade": 7,
+    "prerequisites": ["int_add_sub"],
+    "description": {
+      "en": "Rules of signs for multiplication and division of integers.",
+      "hi": "पूर्णांकों के गुणन और विभाजन में चिन्हों के नियम।",
+      "mr": "पूर्णांकांच्या गुणाकार आणि भागाकारातील चिन्हांचे नियम."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_mul_sign_rule",
+        "name": {
+          "en": "Applying addition sign rules to multiplication",
+          "hi": "जोड़ के चिन्ह नियम को गुणा में लगाना",
+          "mr": "बेरजेचे चिन्ह नियम गुणाकाराला लावणे"
+        },
+        "description": {
+          "en": "Saying (-4) * (-3) = -12 because 'both are negative'.",
+          "hi": "(-4) * (-3) = -12 कहना क्योंकि दोनों ऋणात्मक हैं।",
+          "mr": "(-४) * (-३) = -१२ असे सांगणे कारण दोन्ही ऋण आहेत."
+        },
+        "remedial_tip": {
+          "en": "Two negative factors cancel out to make a positive product.",
+          "hi": "दो ऋणात्मक चिन्हों का गुणा हमेशा धनात्मक फल देता है।",
+          "mr": "दोन ऋण संख्यांचा गुणाकार नेहमी धन संख्या येतो."
+        }
+      }
+    ]
+  },
+  {
+    "id": "frac_proper_improper",
+    "name": {
+      "en": "Fractions: Types & Mixed Representation",
+      "hi": "भिन्न: उचित, अनुचित एवं मिश्र भिन्न",
+      "mr": "अपूर्णांक: प्रकार आणि मिश्र अपूर्णांक"
+    },
+    "grade": 7,
+    "prerequisites": [],
+    "description": {
+      "en": "Understanding numerator, denominator, proper, improper and converting mixed fractions.",
+      "hi": "अंश, हर, उचित व अनुचित भिन्न तथा मिश्र भिन्न में परिवर्तन को समझना।",
+      "mr": "अंश, छेद, सममूल्य, अंशाधिक आणि मिश्र अपूर्णांक समजणे."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_frac_separate_numbers",
+        "name": {
+          "en": "Treating numerator and denominator as two unrelated numbers",
+          "hi": "अंश और हर को दो अलग संख्याएं समझना",
+          "mr": "अंश आणि छेद यांना दोन वेगळ्या संख्या मानणे"
+        },
+        "description": {
+          "en": "Believing 1/4 is bigger than 1/2 because 4 is bigger than 2.",
+          "hi": "1/4 को 1/2 से बड़ा मानना क्योंकि 4, 2 से बड़ा है।",
+          "mr": "१/४ हे १/२ पेक्षा मोठे मानणे कारण ४ हे २ पेक्षा मोठे आहे."
+        },
+        "remedial_tip": {
+          "en": "Use roti sharing: 1 roti shared among 4 people gives smaller pieces than among 2.",
+          "hi": "रोटी बांटने का उदाहरण: 1 रोटी 4 लोगों में बंटेगी तो टुकड़ा छोटा होगा बनिस्बत 2 लोगों के।",
+          "mr": "भाकरीचे उदाहरण: १ भाकरी ४ जणांत वाटल्यास तुकडा लहान मिळतो."
+        }
+      }
+    ]
+  },
+  {
+    "id": "frac_add_sub",
+    "name": {
+      "en": "Addition & Subtraction of Unlike Fractions",
+      "hi": "असमान हर वाले भिन्नों का जोड़ और घटाव",
+      "mr": "भिन्न छेद असणाऱ्या अपूर्णांकांची बेरीज व वजाबाकी"
+    },
+    "grade": 7,
+    "prerequisites": ["frac_proper_improper"],
+    "description": {
+      "en": "Finding LCM of denominators to convert unlike fractions to like fractions before adding or subtracting.",
+      "hi": "हरों का ल.स.प. (LCM) निकालकर असमान भिन्नों को समान हर में बदलना और जोड़ना/घटाना।",
+      "mr": "छेदांचा लसावि काढून समच्छेद अपूर्णांक तयार करणे आणि बेरीज/वजाबाकी करणे."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_frac_add_across",
+        "name": {
+          "en": "Adding numerators and denominators straight across",
+          "hi": "अंश को अंश से और हर को हर से सीधे जोड़ देना",
+          "mr": "अंशाची अंशाशी आणि छेदाची छेदाशी सरळ बेरीज करणे"
+        },
+        "description": {
+          "en": "Calculating 1/2 + 1/3 as (1+1)/(2+3) = 2/5.",
+          "hi": "1/2 + 1/3 को (1+1)/(2+3) = 2/5 लिख देना।",
+          "mr": "१/२ + १/३ चे उत्तर (१+१)/(२+३) = २/५ असे लिहिणे."
+        },
+        "remedial_tip": {
+          "en": "You cannot add slices of different sizes without making them equal size (LCM) first.",
+          "hi": "अलग-अलग आकार के टुकड़ों को सीधे नहीं जोड़ सकते, पहले बराबर आकार (LCM) करना पड़ता है।",
+          "mr": "वेगवेगळ्या आकाराचे तुकडे थेट मोजता येत नाहीत, आधी लसावि काढून समान तुकडे करावे लागतात."
+        }
+      }
+    ]
+  },
+  {
+    "id": "frac_mul_div",
+    "name": {
+      "en": "Multiplication & Reciprocal Division of Fractions",
+      "hi": "भिन्नों का गुणा और व्युत्क्रम से भाग",
+      "mr": "अपूर्णांकांचा गुणाकार आणि गुणाकार व्यस्तने भागाकार"
+    },
+    "grade": 7,
+    "prerequisites": ["frac_add_sub"],
+    "description": {
+      "en": "Multiplying fractions straight across; dividing by inverting the divisor (reciprocal).",
+      "hi": "भिन्नों का सीधा गुणा; तथा भाजक को उलटकर (व्युत्क्रम) भाग करना।",
+      "mr": "अपूर्णांकांचा सरळ गुणाकार आणि दुसऱ्या अपूर्णांकाचा व्यस्त करून भागाकार करणे."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_frac_div_invert_wrong",
+        "name": {
+          "en": "Inverting the dividend instead of divisor",
+          "hi": "भाजक की जगह पहले भिन्न को उलट देना",
+          "mr": "दुसऱ्या अपूर्णांकाऐवजी पहिल्या अपूर्णांकाला व्यस्त करणे"
+        },
+        "description": {
+          "en": "For (3/4) / (2/5), writing (4/3) * (2/5) instead of (3/4) * (5/2).",
+          "hi": "(3/4) / (2/5) में पहले भिन्न को (4/3) * (2/5) लिख देना।",
+          "mr": "(३/४) / (२/५) मध्ये पहिल्या संख्येला उलट करणे."
+        },
+        "remedial_tip": {
+          "en": "Remember: Keep the first, change to multiply, flip the second (KCF).",
+          "hi": "नियम याद रखें: पहली वैसी ही रखो, भाग को गुणा बनाओ, दूसरी को पलटो।",
+          "mr": "पहिली संख्या तशीच ठेवा, भागाकाराचे गुणाकार करा आणि दुसरी संख्या उलटी करा."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dec_place_value",
+    "name": {
+      "en": "Decimals: Place Value & Expansion",
+      "hi": "दशमलव: स्थानीय मान एवं प्रसार",
+      "mr": "दशांश अपूर्णांक: स्थानिक किंमत व विस्तार"
+    },
+    "grade": 7,
+    "prerequisites": [],
+    "description": {
+      "en": "Understanding tenths, hundredths, thousandths and comparing decimals.",
+      "hi": "दशांश, शतांश, सहस्त्रांश और दशमलव संख्याओं की तुलना करना।",
+      "mr": "दशांश, शतांश आणि सहस्रांश स्थान आणि दशांशांची तुलना समजणे."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_dec_longer_is_bigger",
+        "name": {
+          "en": "More digits after decimal means larger number",
+          "hi": "दशमलव के बाद ज्यादा अंक मतलब बड़ी संख्या",
+          "mr": "दशांशानंतर जास्त अंक म्हणजे मोठी संख्या मानणे"
+        },
+        "description": {
+          "en": "Thinking 0.25 is bigger than 0.7 because 25 is bigger than 7.",
+          "hi": "0.25 को 0.7 से बड़ा समझना क्योंकि 25, 7 से बड़ा है।",
+          "mr": "०.२५ हे ०.७ पेक्षा मोठे मानणे कारण २५ हे ७ पेक्षा मोठे आहे."
+        },
+        "remedial_tip": {
+          "en": "Pad trailing zeroes: 0.7 is 0.70, which is larger than 0.25.",
+          "hi": "शून्य लगाकर बराबर करें: 0.7 वास्तव में 0.70 है, जो 0.25 से बड़ा है।",
+          "mr": "शेवटी शून्य द्या: ०.७ म्हणजे ०.७०, जे ०.२५ पेक्षा मोठे आहे."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dec_ops",
+    "name": {
+      "en": "Decimals: Addition, Subtraction & Multiplication",
+      "hi": "दशमलव का जोड़, घटाव एवं गुणन",
+      "mr": "दशांश अपूर्णांकांची बेरीज, वजाबाकी आणि गुणाकार"
+    },
+    "grade": 7,
+    "prerequisites": ["dec_place_value", "frac_proper_improper"],
+    "description": {
+      "en": "Aligning decimal points for addition/subtraction, and counting decimal places for multiplication.",
+      "hi": "जोड़-घटाव में दशमलव बिंदु को सीध में रखना और गुणन में दशमलव स्थानों की गिनती।",
+      "mr": "बेरीज-वजाबाकीत दशांश चिन्ह एका खाली एक मांडणे आणि गुणाकारात दशांश स्थळे मोजणे."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_dec_align_right",
+        "name": {
+          "en": "Right-aligning decimal numbers instead of aligning decimal points",
+          "hi": "दशमलव बिंदु मिलाने के बजाय दाईं ओर से संख्या मिलाना",
+          "mr": "दशांश चिन्हाऐवजी शेवटच्या अंकापासून मांडणी करणे"
+        },
+        "description": {
+          "en": "Adding 3.5 and 1.25 as if they were 35 + 125.",
+          "hi": "3.5 और 1.25 को जोड़ते समय 35 और 125 की तरह जोड़ना।",
+          "mr": "३.५ आणि १.२५ ची बेरीज करताना दशांश चिन्ह न जुळवणे."
+        },
+        "remedial_tip": {
+          "en": "Always line up the decimal dot like buttons on a shirt.",
+          "hi": "कमीज़ के बटनों की तरह दशमलव बिंदु को हमेशा एक सीधी रेखा में रखें।",
+          "mr": "शर्टाच्या बटनाप्रमाणे दशांश बिंदू नेहमी एका रेषेत ठेवा."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dec_div",
+    "name": {
+      "en": "Division of Decimals",
+      "hi": "दशमलव संख्याओं का भाग",
+      "mr": "दशांश अपूर्णांकांचा भागाकार"
+    },
+    "grade": 7,
+    "prerequisites": ["dec_ops", "frac_mul_div"],
+    "description": {
+      "en": "Dividing decimals by integers and by other decimals by shifting decimal places.",
+      "hi": "दशमलव संख्याओं को पूर्णांक और अन्य दशमलव से भाग देना।",
+      "mr": "दशांशांना पूर्णांकाने किंवा दुसऱ्या दशांशाने भागणे."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_dec_div_shift",
+        "name": {
+          "en": "Forgetting to shift dividend when shifting divisor",
+          "hi": "भाजक का दशमलव हटाते समय भाज्य का दशमलव न खिसकाना",
+          "mr": "भाजकाचे दशांश चिन्ह हलवताना भाज्याचे दशांश चिन्ह न हलवणे"
+        },
+        "description": {
+          "en": "Calculating 4.8 / 0.2 as 4.8 / 2 instead of 48 / 2.",
+          "hi": "4.8 / 0.2 को 48 / 2 की जगह 4.8 / 2 समझ लेना।",
+          "mr": "४.८ / ०.२ ला ४८ / २ ऐवजी ४.८ / २ मानणे."
+        },
+        "remedial_tip": {
+          "en": "Whatever you do to the outside number (multiply by 10), do to the inside number too.",
+          "hi": "जो बदलाव बाहर की संख्या में करेंगे (10 से गुणा), वही अंदर भी करना होगा।",
+          "mr": "भाजकाला १० ने गुणले तर भाज्यालाही १० ने गुणावे लागते."
+        }
+      }
+    ]
+  },
+  {
+    "id": "rat_numbers",
+    "name": {
+      "en": "Rational Numbers: Properties & Representation",
+      "hi": "परिमेय संख्याएँ: गुणधर्म और निरूपण",
+      "mr": "परिमेय संख्या: गुणधर्म आणि सादरीकरण"
+    },
+    "grade": 7,
+    "prerequisites": ["int_mul_div", "frac_mul_div"],
+    "description": {
+      "en": "Numbers in p/q form where q != 0; positive, negative, and comparison.",
+      "hi": "p/q रूप की संख्याएँ जहाँ q != 0; धनात्मक, ऋणात्मक और तुलना।",
+      "mr": "p/q स्वरूपातील संख्या जिथे q != 0; तुलना आणि गुणधर्म."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_rat_neg_location",
+        "name": {
+          "en": "Believing -3/4 is different from 3/-4 or -(3/4)",
+          "hi": "-3/4 और 3/-4 को अलग-अलग संख्या मानना",
+          "mr": "-३/४ आणि ३/-४ यांना वेगवेगळ्या संख्या समजणे"
+        },
+        "description": {
+          "en": "Not recognizing that negative sign can be placed on numerator, denominator, or in front.",
+          "hi": "यह न समझना कि ऋण चिन्ह ऊपर, नीचे या भिन्न के आगे कहीं भी हो, मान समान रहता है।",
+          "mr": "ऋण चिन्ह अंशात, छेदात किंवा पुढे असले तरी मूल्य समान असते हे न समजणे."
+        },
+        "remedial_tip": {
+          "en": "A negative divided by positive or positive divided by negative is always negative overall.",
+          "hi": "ऋण को धन से भाग दें या धन को ऋण से, अंतिम परिणाम हमेशा ऋणात्मक ही होता है।",
+          "mr": "ऋण आणि धन संख्यांचा भागाकार नेहमी ऋणच येतो."
+        }
+      }
+    ]
+  },
+  {
+    "id": "simp_eq_intro",
+    "name": {
+      "en": "Simple Equations: Formation & Representation",
+      "hi": "सरल समीकरण: कथन से समीकरण बनाना",
+      "mr": "साधी समीकरणे: विधानावरून समीकरण मांडणी"
+    },
+    "grade": 7,
+    "prerequisites": ["rat_numbers"],
+    "description": {
+      "en": "Translating word problems into algebraic equations using variables and equality.",
+      "hi": "शाब्दिक समस्याओं को चर और समता चिन्ह का उपयोग करके समीकरण में बदलना।",
+      "mr": "उदाहरणातील माहिती चल वापरून समीकरणाच्या रूपात मांडणे."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_eq_equal_as_result",
+        "name": {
+          "en": "Viewing equals sign as 'gives answer' rather than balance",
+          "hi": "बराबर चिन्ह को केवल उत्तर का संकेत समझना, संतुलन नहीं",
+          "mr": "बरोबर चिन्हाला केवळ उत्तराचे चिन्ह मानणे, समतोल नाही"
+        },
+        "description": {
+          "en": "Thinking expressions cannot have variables on both sides of '='.",
+          "hi": "यह मानना कि '=' के दोनों तरफ चर नहीं हो सकते।",
+          "mr": "'=' चिन्हाच्या दोन्ही बाजूस चल असू शकत नाहीत असा समज."
+        },
+        "remedial_tip": {
+          "en": "Visualize a weighing scale: both pans must balance equally.",
+          "hi": "तराजू की कल्पना करें: दोनों पलड़े बराबर संतुलित होने चाहिए।",
+          "mr": "तराजूची कल्पना करा: दोन्ही पारडी समान संतुलित असली पाहिजेत."
+        }
+      }
+    ]
+  },
+  {
+    "id": "simp_eq_solve",
+    "name": {
+      "en": "Solving Simple Equations: Transposition Method",
+      "hi": "सरल समीकरण हल करना: पक्षांतरण विधि",
+      "mr": "साधी समीकरणे सोडवणे: पक्षांतर पद्धत"
+    },
+    "grade": 7,
+    "prerequisites": ["simp_eq_intro", "int_add_sub"],
+    "description": {
+      "en": "Isolating the variable by moving terms across the equals sign with inverse operations.",
+      "hi": "समीकरण के एक तरफ से दूसरी तरफ पदों को उल्टी संक्रिया के साथ ले जाकर चर का मान निकालना।",
+      "mr": "पक्षांतर करताना उलट क्रिया करून चलाची किंमत काढणे."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_transposition_sign",
+        "name": {
+          "en": "Forgetting to flip sign when transposing across equals",
+          "hi": "पक्षांतर करते समय चिन्ह बदलना भूल जाना",
+          "mr": "पक्षांतर करताना चिन्ह बदलण्यास विसरणे"
+        },
+        "description": {
+          "en": "Moving +5 across '=' as +5 instead of -5, leading to x + 5 = 12 => x = 12 + 5 = 17.",
+          "hi": "x + 5 = 12 में 5 को उधर ले जाकर 12 + 5 लिख देना।",
+          "mr": "x + ५ = १२ मध्ये ५ तिकडे नेताना चिन्ह न बदलता १२ + ५ = १७ करणे."
+        },
+        "remedial_tip": {
+          "en": "When a term crosses the bridge (=), its sign must flip (+ becomes -, * becomes /).",
+          "hi": "जब कोई पद बराबर का पुल पार करता है, उसका चिन्ह बदल जाता है (+ बनता है -)।",
+          "mr": "जेव्हा पद बरोबरचे पूल ओलांडते, तेव्हा त्याचे चिन्ह बदलते (+ चे - होते)."
+        }
+      }
+    ]
+  },
+  {
+    "id": "alg_terms",
+    "name": {
+      "en": "Algebraic Expressions: Terms, Factors & Coefficients",
+      "hi": "बीजीय व्यंजक: पद, गुणनखंड एवं गुणांक",
+      "mr": "बैजिक राशी: पदे, अवयव आणि सहगुणक"
+    },
+    "grade": 7,
+    "prerequisites": ["rat_numbers"],
+    "description": {
+      "en": "Identifying terms, numerical coefficients, like and unlike terms in algebraic expressions.",
+      "hi": "बीजीय व्यंजकों में पद, संख्यात्मक गुणांक, समान और असमान पदों की पहचान।",
+      "mr": "बैजिक राशींमध्ये पदे, सहगुणक, स्वरूप आणि विस्वरूप पदे ओळखणे."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_alg_invisible_one",
+        "name": {
+          "en": "Thinking coefficient of x is 0 instead of 1",
+          "hi": "x का गुणांक 0 समझना, 1 नहीं",
+          "mr": "x चा सहगुणक १ ऐवजी ० मानणे"
+        },
+        "description": {
+          "en": "Stating that in expression x + 4, the coefficient of x is 0.",
+          "hi": "x + 4 में x का कोई गुणांक न दिखने पर उसे 0 बता देना।",
+          "mr": "x + ४ मध्ये x चा सहगुणक काही नाही म्हणून ० सांगणे."
+        },
+        "remedial_tip": {
+          "en": "If you have 1 mango, you just say 'mango'. So x means 1 * x.",
+          "hi": "अगर 1 आम है तो हम केवल 'आम' कहते हैं। वैसे ही x का मतलब 1 * x है।",
+          "mr": "१ आंबा असेल तर आपण 'आंबा' म्हणतो. तसेच x म्हणजे १ * x."
+        }
+      }
+    ]
+  },
+  {
+    "id": "alg_add_sub",
+    "name": {
+      "en": "Addition & Subtraction of Algebraic Expressions",
+      "hi": "बीजीय व्यंजकों का जोड़ और घटाव",
+      "mr": "बैजिक राशींची बेरीज आणि वजाबाकी"
+    },
+    "grade": 7,
+    "prerequisites": ["alg_terms", "int_add_sub"],
+    "description": {
+      "en": "Combining like terms by adding their numerical coefficients and preserving variables.",
+      "hi": "समान पदों के संख्यात्मक गुणांकों को जोड़कर या घटाकर व्यंजकों को सरल करना।",
+      "mr": "स्वरूप पदांच्या सहगुणकांची बेरीज-वजाबाकी करून राशी सोप्या करणे."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_alg_add_unlike",
+        "name": {
+          "en": "Adding unlike terms together into a single combined term",
+          "hi": "असमान पदों को आपस में जोड़ देना",
+          "mr": "विस्वरूप पदांची एकत्र बेरीज करणे"
+        },
+        "description": {
+          "en": "Adding 2x + 3y and getting 5xy.",
+          "hi": "2x + 3y को जोड़कर 5xy लिख देना।",
+          "mr": "२x + ३y ची बेरीज ५xy अशी लिहिणे."
+        },
+        "remedial_tip": {
+          "en": "2 apples + 3 oranges cannot become 5 apple-oranges. Keep them separate!",
+          "hi": "2 सेब और 3 संतरे मिलकर 5 सेब-संतरे नहीं बन सकते। वे अलग ही रहेंगे!",
+          "mr": "२ सफरचंद आणि ३ संत्री एकत्र करून ५ सफरचंद-संत्री होत नाहीत. ते वेगळेच राहतात!"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ratio_prop",
+    "name": {
+      "en": "Ratio & Proportion: Unitary Method",
+      "hi": "अनुपात और समानुपात: ऐकिक नियम",
+      "mr": "गुणोत्तर आणि प्रमाण: एकमान पद्धत"
+    },
+    "grade": 7,
+    "prerequisites": ["frac_mul_div"],
+    "description": {
+      "en": "Comparing quantities with same units and solving real problems using the unitary method.",
+      "hi": "समान इकाइयों वाली राशियों की तुलना और ऐकिक नियम से दैनिक जीवन की समस्याएं हल करना।",
+      "mr": "प्रमाणातील तुलना आणि एकमान पद्धतीचा वापर करून उदाहरणे सोडवणे."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_ratio_different_units",
+        "name": {
+          "en": "Finding ratio without converting to the same unit first",
+          "hi": "इकाइयों को समान किए बिना सीधे अनुपात निकालना",
+          "mr": "एकके समान न करता थेट गुणोत्तर काढणे"
+        },
+        "description": {
+          "en": "Writing ratio of 50 paise to ₹2 as 50:2 = 25:1 instead of 50:200 = 1:4.",
+          "hi": "50 पैसे और ₹2 का अनुपात 50:2 निकाल देना, ₹2 को 200 पैसे न बदलना।",
+          "mr": "५० पैसे आणि २ रुपयांचे गुणोत्तर ५०:२ काढणे, २ रुपयांचे पैसे न करता."
+        },
+        "remedial_tip": {
+          "en": "Always match units before comparing: convert Rupees to paise first.",
+          "hi": "तुलना से पहले दोनों को एक ही इकाई में बदलें: रुपयों को पहले पैसे बनाएं।",
+          "mr": "तुलना करण्यापूर्वी एकके समान करा: रुपयांचे आधी पैसे करा."
+        }
+      }
+    ]
+  },
+  {
+    "id": "percentage",
+    "name": {
+      "en": "Percentages: Meaning & Conversions",
+      "hi": "प्रतिशतता: अर्थ एवं परिवर्तन",
+      "mr": "टक्केवारी: अर्थ आणि रूपांतरण"
+    },
+    "grade": 7,
+    "prerequisites": ["ratio_prop", "dec_ops"],
+    "description": {
+      "en": "Understanding 'per hundred', converting between fractions, decimals, and percentages.",
+      "hi": "प्रति 100 पर मान समझना; भिन्न, दशमलव और प्रतिशत के बीच रूपांतरण।",
+      "mr": "शेकडा म्हणजे दर शंभरामागे; अपूर्णांक व दशांशांचे टक्केवारीत रूपांतर."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_percent_over_100",
+        "name": {
+          "en": "Believing a percentage cannot exceed 100%",
+          "hi": "यह मानना कि प्रतिशत कभी 100% से अधिक नहीं हो सकता",
+          "mr": "टक्केवारी १००% पेक्षा जास्त असू शकत नाही असा समज"
+        },
+        "description": {
+          "en": "Thinking 150% is mathematically impossible or invalid.",
+          "hi": "150% को गणितीय रूप से असंभव मानना।",
+          "mr": "१५०% हे असूच शकत नाही असे मानणे."
+        },
+        "remedial_tip": {
+          "en": "If prices doubled, they became 200%. Quantities can grow beyond original 100%.",
+          "hi": "यदि दाम दोगुना हो जाए तो वह 200% हो जाता है। वृद्धि 100% से अधिक हो सकती है।",
+          "mr": "किंमत दुप्पट झाली तर ती २००% होते. वाढ १००% पेक्षा जास्त असू शकते."
+        }
+      }
+    ]
+  },
+  {
+    "id": "lines_angles",
+    "name": {
+      "en": "Lines & Angles: Complementary, Supplementary, Vertically Opposite",
+      "hi": "रेखाएँ और कोण: पूरक, संपूरक एवं शीर्षाभिमुख कोण",
+      "mr": "रेषा आणि कोन: कोटिकोन, पूरक कोन आणि विरुद्ध कोन"
+    },
+    "grade": 7,
+    "prerequisites": [],
+    "description": {
+      "en": "Pairs of angles whose sum is 90° (complementary), 180° (supplementary), and linear pairs.",
+      "hi": "जिन दो कोणों का योग 90° (पूरक) और 180° (संपूरक) हो, तथा रैखिक युग्म की समझ।",
+      "mr": "ज्या दोन कोनांची बेरीज ९०° (कोटिकोन) आणि १८०° (पूरक कोन) असते ते संबंध समजणे."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_angle_comp_supp_confuse",
+        "name": {
+          "en": "Swapping complementary (90°) and supplementary (180°)",
+          "hi": "पूरक (90°) और संपूरक (180°) के योग में भ्रम",
+          "mr": "कोटिकोन (९०°) आणि पूरक कोन (१८०°) यात गोंधळ"
+        },
+        "description": {
+          "en": "Assuming complementary angles sum to 180°.",
+          "hi": "पूरक कोणों का योग 180° मान लेना।",
+          "mr": "कोटिकोन म्हणजे १८०° अशी समजूत असणे."
+        },
+        "remedial_tip": {
+          "en": "C comes before S in alphabet, 90 comes before 180 (C=90, S=180).",
+          "hi": "वर्णमाला में C पहले आता है S से, 90 पहले आता है 180 से (C=90, S=180)।",
+          "mr": "कोटिकोन लहान अक्षराचा (९०°), पूरक कोन मोठ्या अक्षराचा (१८०°)."
+        }
+      }
+    ]
+  },
+  {
+    "id": "parallel_trans",
+    "name": {
+      "en": "Pairs of Lines: Transversal & Alternate Angles",
+      "hi": "समांतर रेखाएँ एवं तिर्यक रेखा के कोण",
+      "mr": "समांतर रेषा व छेदिका: व्युत्क्रम आणि संगत कोन"
+    },
+    "grade": 7,
+    "prerequisites": ["lines_angles"],
+    "description": {
+      "en": "Angles formed when a transversal intersects two parallel lines: corresponding, alternate interior, interior angles.",
+      "hi": "तिर्यक रेखा द्वारा समांतर रेखाओं को काटने पर बने संगत, एकांतर और अंतःकोण।",
+      "mr": "छेदिकेमुळे तयार होणारे संगत कोन, व्युत्क्रम कोन आणि आंतरकोन."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_trans_interior_sum",
+        "name": {
+          "en": "Thinking interior angles on the same side are equal instead of supplementary",
+          "hi": "तिर्यक रेखा के एक ही ओर के अंतः कोणों को बराबर समझ लेना",
+          "mr": "एकाच बाजूचे आंतरकोन समान असतात असा गैरसमज"
+        },
+        "description": {
+          "en": "Setting interior consecutive angles equal instead of adding up to 180°.",
+          "hi": "क्रमागत अंतःकोणों का योग 180° करने के बजाय उन्हें बराबर मान लेना।",
+          "mr": "आंतरकोनांची बेरीज १८०° करण्याऐवजी ते समान मानणे."
+        },
+        "remedial_tip": {
+          "en": "Look at the shape: one is acute and one is obtuse, so they cannot be equal; they sum to 180°.",
+          "hi": "आकृति देखें: एक न्यूनकोण है और दूसरा अधिककोण, दोनों बराबर नहीं हो सकते; योग 180° होगा।",
+          "mr": "आकृती पहा: एक लघुकोन व एक विशालकोन आहे, ते समान असू शकत नाहीत; बेरीज १८०° असेल."
+        }
+      }
+    ]
+  },
+  {
+    "id": "triangle_prop",
+    "name": {
+      "en": "Properties of Triangles: Angle Sum Property",
+      "hi": "त्रिभुज के गुण: तीनों कोणों का योग गुणधर्म",
+      "mr": "त्रिकोणाचे गुणधर्म: तीनही कोनांच्या मापांची बेरीज"
+    },
+    "grade": 7,
+    "prerequisites": ["lines_angles"],
+    "description": {
+      "en": "The sum of the three interior angles of any triangle is always 180°.",
+      "hi": "किसी भी त्रिभुज के तीनों अंतःकोणों का योग सदैव 180° होता है।",
+      "mr": "कोणत्याही त्रिकोणाच्या तीनही आंतरकोनांची बेरीज नेहमी १८०° असते."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_triangle_angle_sum",
+        "name": {
+          "en": "Assuming larger triangles have an angle sum greater than 180°",
+          "hi": "बड़े त्रिभुज के कोणों का योग 180° से अधिक मानना",
+          "mr": "मोठ्या आकाराच्या त्रिकोणाच्या कोनांची बेरीज १८०° पेक्षा जास्त मानणे"
+        },
+        "description": {
+          "en": "Thinking that increasing side lengths increases the total angle sum.",
+          "hi": "यह सोचना कि बड़ी भुजाओं वाले त्रिभुज के कोणों का जोड़ भी बड़ा होगा।",
+          "mr": "बाजू मोठ्या असल्या की कोनांची बेरीजही वाढेल असा समज."
+        },
+        "remedial_tip": {
+          "en": "No matter how huge or tiny a triangle is, all 3 angles tear and fit flat on a straight line (180°).",
+          "hi": "त्रिभुज चाहे कितना भी बड़ा या छोटा हो, तीनों कोनों को काटकर मिलाने पर 180° की सीधी रेखा ही बनती है।",
+          "mr": "त्रिकोण लहान असो वा मोठा, तिन्ही कोन एकत्र केल्यास सरळ रेषेत (१८०°) बसतात."
+        }
+      }
+    ]
+  },
+  {
+    "id": "triangle_ext",
+    "name": {
+      "en": "Exterior Angle Property of Triangles",
+      "hi": "त्रिभुज का बाह्य कोण गुणधर्म",
+      "mr": "त्रिकोणाचा बाह्यकोन गुणधर्म"
+    },
+    "grade": 7,
+    "prerequisites": ["triangle_prop"],
+    "description": {
+      "en": "An exterior angle of a triangle is equal to the sum of its two interior opposite angles.",
+      "hi": "त्रिभुज का बाह्य कोण उसके दोनों सम्मुख अंतःकोणों के योग के बराबर होता है।",
+      "mr": "त्रिकोणाचा बाह्यकोन हा त्याच्या दुरुस्त आंतरकोनांच्या बेरजेइतका असतो."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_ext_angle_adjacent",
+        "name": {
+          "en": "Adding the adjacent interior angle instead of opposite ones",
+          "hi": "सम्मुख कोणों के बजाय साथ वाले कोण को जोड़ देना",
+          "mr": "दुरुस्त कोनांऐवजी लगतचा आंतरकोन जोडणे"
+        },
+        "description": {
+          "en": "Confusing linear pair (exterior + adjacent = 180) with exterior property (exterior = sum of opposite).",
+          "hi": "रैखिक युग्म और बाह्य कोण गुणधर्म में भ्रमित हो जाना।",
+          "mr": "रेषीय जोडीतील कोन आणि बाह्यकोन गुणधर्मात गल्लत करणे."
+        },
+        "remedial_tip": {
+          "en": "The exterior angle looks across the triangle to the two far-away friends (opposite angles).",
+          "hi": "बाह्य कोण अपने साथ वाले को छोड़कर सामने वाले दोनों दूर के कोणों का योग होता है।",
+          "mr": "बाह्यकोन हा शेजारच्या कोणाला सोडून समोरील दोन कोनांची बेरीज असतो."
+        }
+      }
+    ]
+  },
+  {
+    "id": "pythagoras",
+    "name": {
+      "en": "Pythagoras Theorem in Right Triangles",
+      "hi": "समकोण त्रिभुज में पाइथागोरस प्रमेय",
+      "mr": "काटकोन त्रिकोणात पायथागोरसचा सिद्धांत"
+    },
+    "grade": 7,
+    "prerequisites": ["triangle_prop"],
+    "description": {
+      "en": "In a right-angled triangle, hypotenuse^2 = base^2 + perpendicular^2.",
+      "hi": "समकोण त्रिभुज में, कर्ण का वर्ग = आधार का वर्ग + लंब का वर्ग।",
+      "mr": "काटकोन त्रिकोणात, कर्णाचा वर्ग = पायाचा वर्ग + उंचीचा वर्ग."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_pythagoras_any_triangle",
+        "name": {
+          "en": "Applying Pythagoras theorem to non-right triangles",
+          "hi": "किसी भी त्रिभुज में पाइथागोरस प्रमेय लगा देना",
+          "mr": "काटकोन नसलेल्या त्रिकोणालाही पायथागोरस लावणे"
+        },
+        "description": {
+          "en": "Using a^2 + b^2 = c^2 in acute or obtuse triangles without a 90° angle.",
+          "hi": "न्यूनकोण या अधिककोण त्रिभुज में बिना 90° कोण के यह सूत्र लगा देना।",
+          "mr": "९०° कोन नसतानाही पायथागोरसचे सूत्र वापरणे."
+        },
+        "remedial_tip": {
+          "en": "Pythagoras is only valid when there is a strict 90° right corner (L-shape).",
+          "hi": "पाइथागोरस केवल तभी लागू होता है जब कम से कम एक कोण ठीक 90° (L आकार) का हो।",
+          "mr": "पायथागोरस फक्त ९०° चा काटकोन (L आकार) असेल तरच लागू होतो."
+        }
+      }
+    ]
+  },
+  {
+    "id": "congruence_tri",
+    "name": {
+      "en": "Congruence of Triangles: SSS, SAS, ASA, RHS",
+      "hi": "त्रिभुजों की सर्वांगसमता: SSS, SAS, ASA, RHS",
+      "mr": "त्रिकोणांची एकरूपता: बा-बा-बा, बा-को-बा, को-बा-को, क-भु"
+    },
+    "grade": 7,
+    "prerequisites": ["triangle_prop"],
+    "description": {
+      "en": "Conditions under which two triangles have identical size and shape.",
+      "hi": "वे स्थितियाँ जिनमें दो त्रिभुज माप और आकार में पूरी तरह समान होते हैं।",
+      "mr": "दोन त्रिकोण आकार आणि मापाने तंतोतंत जुळण्याच्या अटी."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_congruence_aaa",
+        "name": {
+          "en": "Assuming AAA guarantees congruence",
+          "hi": "तीनों कोण समान होने पर सर्वांगसम मान लेना (AAA)",
+          "mr": "तिन्ही कोन समान असल्यास त्रिकोण एकरूप मानणे (को-को-को)"
+        },
+        "description": {
+          "en": "Believing two triangles with equal angles must be congruent (confusing similarity with congruence).",
+          "hi": "यह मानना कि समान कोण वाले त्रिभुज सर्वांगसम ही होंगे (समरूपता और सर्वांगसमता का भ्रम)।",
+          "mr": "कोन समान असले तरी आकार लहान-मोठा असू शकतो हे विसरणे."
+        },
+        "remedial_tip": {
+          "en": "An equilateral triangle with 1cm sides and one with 10m sides have same angles (60°) but different sizes!",
+          "hi": "1 सेमी भुजा और 10 मीटर भुजा वाले समबाहु त्रिभुज के सभी कोण 60° हैं, पर वे सर्वांगसम नहीं हैं!",
+          "mr": "१ सेमी आणि १० मीटर बाजूंच्या त्रिकोणांचे कोन ६०° च असतात, पण ते एकरूप नसतात!"
+        }
+      }
+    ]
+  },
+  {
+    "id": "perim_area_rec_sq",
+    "name": {
+      "en": "Perimeter & Area: Squares and Rectangles",
+      "hi": "परिमाप एवं क्षेत्रफल: वर्ग और आयत",
+      "mr": "परिमिती आणि क्षेत्रफळ: चौरस आणि आयत"
+    },
+    "grade": 7,
+    "prerequisites": ["dec_ops"],
+    "description": {
+      "en": "Perimeter as boundary length (2*(l+b)), and Area as surface enclosed (l*b) with square units.",
+      "hi": "परिमाप अर्थात सीमा की कुल लंबाई, और क्षेत्रफल अर्थात घिरी हुई सतह (वर्ग इकाई में)।",
+      "mr": "परिमिती म्हणजे सीमेची लांबी आणि क्षेत्रफळ म्हणजे व्यापलेली जागा (चौरस एककात)."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_perim_area_confuse",
+        "name": {
+          "en": "Confusing perimeter (boundary) with area (surface)",
+          "hi": "परिमाप और क्षेत्रफल के सूत्रों में भ्रम",
+          "mr": "परिमिती आणि क्षेत्रफळ या संकल्पनांमध्ये गोंधळ"
+        },
+        "description": {
+          "en": "Using 2*(l+b) when asked for area or using l*b for fencing boundary.",
+          "hi": "खेत में बाड़ लगाने के लिए क्षेत्रफल निकालना या पेंट करने के लिए परिमाप निकालना।",
+          "mr": "कुंपण घालण्यासाठी क्षेत्रफळ काढणे किंवा रंग देण्यासाठी परिमिती काढणे."
+        },
+        "remedial_tip": {
+          "en": "Perimeter is walking around the fence; area is planting grass on the entire field.",
+          "hi": "परिमाप मतलब खेत की बाड़ पर चलना; क्षेत्रफल मतलब पूरे मैदान पर घास लगाना।",
+          "mr": "परिमिती म्हणजे कुंपणावरून चालणे; क्षेत्रफळ म्हणजे शेतात गवत लावणे."
+        }
+      }
+    ]
+  },
+  {
+    "id": "area_tri_para",
+    "name": {
+      "en": "Area of Parallelograms & Triangles",
+      "hi": "समांतर चतुर्भुज एवं त्रिभुज का क्षेत्रफल",
+      "mr": "समांतरभुज चौकोन आणि त्रिकोणाचे क्षेत्रफळ"
+    },
+    "grade": 7,
+    "prerequisites": ["perim_area_rec_sq", "triangle_prop"],
+    "description": {
+      "en": "Area of parallelogram = base * height; Area of triangle = 1/2 * base * height.",
+      "hi": "समांतर चतुर्भुज का क्षेत्रफल = आधार * ऊंचाई; त्रिभुज का क्षेत्रफल = 1/2 * आधार * ऊंचाई।",
+      "mr": "समांतरभुज चौकोनाचे क्षेत्रफळ = पाया * उंची; त्रिकोणाचे क्षेत्रफळ = १/२ * पाया * उंची."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_slant_height_as_altitude",
+        "name": {
+          "en": "Using slant side length instead of perpendicular height",
+          "hi": "लंब ऊंचाई की जगह तिरछी भुजा की लंबाई ले लेना",
+          "mr": "लंब उंचीऐवजी तिरप्या बाजूची लांबी घेणे"
+        },
+        "description": {
+          "en": "Multiplying base by slant side instead of vertical perpendicular height.",
+          "hi": "आधार को लंब ऊंचाई के बजाय तिरछी भुजा से गुणा कर देना।",
+          "mr": "पायाला सरळ लंब उंचीऐवजी तिरप्या बाजूने गुणणे."
+        },
+        "remedial_tip": {
+          "en": "Height must always be measured standing straight at 90°, just like measuring a person's height.",
+          "hi": "ऊंचाई हमेशा 90° पर सीधी नापी जाती है, जैसे डॉक्टर आपकी लंबाई सीधे खड़े करके नापते हैं।",
+          "mr": "उंची नेहमी ९०° च्या काटकोनातच मोजली जाते, तिरपी नाही."
+        }
+      }
+    ]
+  },
+  {
+    "id": "exp_powers",
+    "name": {
+      "en": "Exponents & Powers: Laws of Exponents",
+      "hi": "घातांक और घात: घातांकों के नियम",
+      "mr": "घातांक आणि नियम: घातांकांचे मूलभूत नियम"
+    },
+    "grade": 7,
+    "prerequisites": ["int_mul_div"],
+    "description": {
+      "en": "Base and power notation; laws: a^m * a^n = a^(m+n), a^m / a^n = a^(m-n), (a^m)^n = a^(mn).",
+      "hi": "आधार और घात; घातांक नियम: a^m * a^n = a^(m+n), (a^m)^n = a^(mn)।",
+      "mr": "पाया आणि घातांक; नियम: गुणाकारात घातांकांची बेरीज आणि भागाकारात वजाबाकी."
+    },
+    "misconceptions": [
+      {
+        "id": "misc_exp_multiply_base_power",
+        "name": {
+          "en": "Multiplying base by exponent instead of repeated multiplication",
+          "hi": "आधार को घात से सीधे गुणा कर देना",
+          "mr": "पायाला घातांकाने थेट गुणणे"
+        },
+        "description": {
+          "en": "Calculating 3^4 as 3 * 4 = 12 instead of 3 * 3 * 3 * 3 = 81.",
+          "hi": "3^4 को 3 * 3 * 3 * 3 = 81 के बजाय 3 * 4 = 12 लिख देना।",
+          "mr": "३^४ चे उत्तर ३ * ४ = १२ असे काढणे, ३ * ३ * ३ * ३ = ८१ ऐवजी."
+        },
+        "remedial_tip": {
+          "en": "The exponent tells how many times to repeat the multiplication: 3^4 means four 3s multiplied.",
+          "hi": "घात बताता है कि संख्या को कितनी बार गुणा करना है: 3^4 मतलब 3 को 4 बार गुणा करो।",
+          "mr": "घातांक म्हणजे संख्या किती वेळा गुणायची: ३^४ म्हणजे ३ चा ४ वेळा गुणाकार."
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VidyaSaathi — विद्यासाथी | Agentic AI Tutor & Teacher Insights</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2563EB">
+  <!-- Tailwind CSS via CDN for lightweight, modern responsive design -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif; }
+    .badge-mastered { background-color: #DEF7EC; color: #03543F; border: 1px solid #31C48D; }
+    .badge-developing { background-color: #FEF08A; color: #713F12; border: 1px solid #FACC15; }
+    .badge-weak { background-color: #FDE8E8; color: #9B1C1C; border: 1px solid #F98080; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+
+  <!-- Top Navigation Bar -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-extrabold text-xl shadow-md">
+          VS
+        </div>
+        <div>
+          <h1 class="text-xl font-bold bg-gradient-to-r from-blue-700 to-indigo-800 bg-clip-text text-transparent flex items-center gap-2">
+            VidyaSaathi <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 font-semibold">Class 7 Maths</span>
+          </h1>
+          <p class="text-xs text-slate-500 font-medium">विद्यासाथी • Agentic AI for Low-Resource Schools</p>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-3">
+        <!-- Language Switcher -->
+        <div class="flex items-center bg-slate-100 rounded-lg p-1 border border-slate-200">
+          <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 text-xs font-semibold rounded-md bg-white text-blue-700 shadow-sm transition">EN</button>
+          <button id="lang-hi" onclick="setLanguage('hi')" class="px-2.5 py-1 text-xs font-semibold rounded-md text-slate-600 hover:text-slate-900 transition">हिन्दी</button>
+          <button id="lang-mr" onclick="setLanguage('mr')" class="px-2.5 py-1 text-xs font-semibold rounded-md text-slate-600 hover:text-slate-900 transition">मराठी</button>
+        </div>
+
+        <!-- Role Toggle Tabs -->
+        <div class="flex items-center bg-blue-50 border border-blue-200 rounded-xl p-1">
+          <button id="tab-student" onclick="switchPortal('student')" class="px-3.5 py-1.5 text-xs font-bold rounded-lg bg-blue-600 text-white shadow transition flex items-center gap-1.5">
+            <span>🎒</span> <span id="label-student-tab">Student Portal</span>
+          </button>
+          <button id="tab-teacher" onclick="switchPortal('teacher')" class="px-3.5 py-1.5 text-xs font-bold rounded-lg text-blue-800 hover:bg-blue-100/50 transition flex items-center gap-1.5">
+            <span>📊</span> <span id="label-teacher-tab">Teacher Dashboard</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+
+    <!-- ============================================================= -->
+    <!-- 1. STUDENT PORTAL -->
+    <!-- ============================================================= -->
+    <div id="student-portal" class="space-y-6">
+
+      <!-- Onboarding Card (If not joined yet) -->
+      <div id="student-onboarding" class="max-w-xl mx-auto bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+        <div class="text-center mb-6">
+          <div class="inline-flex p-3 bg-blue-50 text-blue-600 rounded-2xl mb-3 text-3xl">📐</div>
+          <h2 id="txt-welcome-title" class="text-2xl font-bold text-slate-800">Welcome to VidyaSaathi!</h2>
+          <p id="txt-welcome-sub" class="text-sm text-slate-500 mt-1">Join your Class 7 Mathematics room. No real name or phone number needed!</p>
+        </div>
+
+        <form onsubmit="handleJoinClass(event)" class="space-y-4">
+          <div>
+            <label id="lbl-join-code" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Class Join Code</label>
+            <input type="text" id="input-join-code" value="VIDYA7" required uppercase
+                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-mono font-bold text-slate-800 tracking-wider text-center focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <p class="text-xs text-slate-400 mt-1 text-center">Demo class code: <span class="font-bold text-blue-600">VIDYA7</span></p>
+          </div>
+
+          <div>
+            <label id="lbl-nickname" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Your Nickname</label>
+            <input type="text" id="input-nickname" placeholder="e.g. Raju, Gauri, Rohit" required
+                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-slate-800 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+
+          <button type="submit" id="btn-join-class"
+                  class="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl shadow-md hover:from-blue-700 hover:to-indigo-700 transition flex items-center justify-center gap-2">
+            <span id="txt-btn-join">Start My Learning Journey</span> &rarr;
+          </button>
+        </form>
+      </div>
+
+      <!-- Active Student Dashboard (Visible after joining) -->
+      <div id="student-active-area" class="hidden space-y-6">
+
+        <!-- Student Header Profile Banner -->
+        <div class="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 rounded-2xl text-white p-6 shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-2xl">👋</span>
+              <h2 class="text-2xl font-extrabold tracking-tight" id="student-greeting">Namaste, Student!</h2>
+            </div>
+            <p class="text-blue-100 text-sm mt-1" id="student-class-info">Class 7 Mathematics • Section B</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <button onclick="startDiagnostic()" class="px-4 py-2 bg-white text-blue-700 font-bold text-sm rounded-xl shadow hover:bg-blue-50 transition flex items-center gap-2">
+              <span>🎯</span> <span id="btn-retake-diag">Diagnostic Test</span>
+            </button>
+            <button onclick="loadTutorRoom('int_add_sub')" class="px-4 py-2 bg-blue-500 text-white font-bold text-sm rounded-xl shadow hover:bg-blue-400 transition flex items-center gap-2">
+              <span>📖</span> <span id="btn-open-tutor">Tutor Room</span>
+            </button>
+            <button onclick="openEvaluatorModal()" class="px-4 py-2 bg-amber-500 text-white font-bold text-sm rounded-xl shadow hover:bg-amber-400 transition flex items-center gap-2">
+              <span>📷</span> <span id="btn-open-notebook">Notebook Check</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Diagnostic Test Container -->
+        <div id="diagnostic-card" class="hidden bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full" id="diag-badge-topic">Diagnostic Assessment</span>
+              <h3 class="text-lg font-bold text-slate-800 mt-1" id="diag-q-index">Question 1 of 10</h3>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-slate-400 font-medium">BKT Mastery Tracker</span>
+              <div class="w-24 bg-slate-100 h-2 rounded-full overflow-hidden mt-1">
+                <div id="diag-progress-bar" class="bg-blue-600 h-full w-10 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question Content -->
+          <div class="mt-6">
+            <p class="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed" id="diag-question-text">
+              Loading question...
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6" id="diag-options-container">
+              <!-- Options populated dynamically -->
+            </div>
+          </div>
+
+          <div id="diag-instant-feedback" class="mt-4 p-4 rounded-xl hidden text-sm font-medium"></div>
+        </div>
+
+        <!-- Diagnostic Report Synthesis Card (Visible upon completing diagnostic) -->
+        <div id="diagnostic-report-card" class="hidden bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl font-bold">✓</div>
+            <div>
+              <h3 class="text-xl font-extrabold text-slate-800" id="rpt-title">Diagnostic Assessment Complete!</h3>
+              <p class="text-xs text-slate-500" id="rpt-subtitle">Agentic root-gap diagnosis generated via Bayesian Knowledge Tracing</p>
+            </div>
+          </div>
+
+          <!-- Root Gap Alert Box -->
+          <div id="rpt-root-gap-box" class="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🔍</span>
+              <div>
+                <h4 class="font-bold text-sm text-amber-800 uppercase tracking-wide">Root-Cause Concept Gap Detected</h4>
+                <p class="text-sm mt-1" id="rpt-root-gap-text">
+                  Struggling with Solving Simple Equations because prerequisite Integers (Addition & Subtraction) is unmastered.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary paragraph -->
+          <div class="p-4 rounded-xl bg-blue-50 border border-blue-100 text-blue-900 text-sm leading-relaxed" id="rpt-summary-text">
+            Diagnostic summary loading...
+          </div>
+
+          <!-- Personalized Plan View -->
+          <div>
+            <h4 class="font-bold text-slate-800 text-base mb-3 flex items-center gap-2">
+              <span>🗺️</span> <span id="rpt-plan-heading">Your Personalized Learning Path</span>
+            </h4>
+            <div id="rpt-plan-items" class="space-y-3">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Tutor Room Container -->
+        <div id="tutor-room-card" class="hidden bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-100 gap-3">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full">VidyaSaathi Tutor</span>
+                <span id="tutor-lang-tag" class="text-xs font-semibold text-slate-500">English</span>
+              </div>
+              <h3 class="text-xl font-extrabold text-slate-800 mt-1" id="tutor-concept-title">Addition & Subtraction of Integers</h3>
+            </div>
+            <!-- Audio Read-Aloud Button (TTS) -->
+            <button onclick="speakExplanation()" id="btn-audio-tts"
+                    class="px-4 py-2 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs flex items-center gap-2 transition border border-indigo-200 shadow-sm">
+              <span id="tts-icon">🔊</span> <span id="btn-audio-text">Listen (बोलकर सुनाएं)</span>
+            </button>
+          </div>
+
+          <!-- Intuitive Vernacular Explanation -->
+          <div class="bg-gradient-to-br from-indigo-50/60 to-blue-50/60 rounded-2xl p-5 border border-indigo-100">
+            <h4 class="font-bold text-indigo-900 text-sm flex items-center gap-2 mb-2">
+              <span>💡</span> <span id="txt-intuitive-head">Intuitive Explanation & Daily Analogy</span>
+            </h4>
+            <p id="tutor-explanation-text" class="text-slate-800 text-sm sm:text-base leading-relaxed">
+              Loading vernacular explanation...
+            </p>
+          </div>
+
+          <!-- Worked Example -->
+          <div class="border border-slate-200 rounded-2xl p-5 bg-slate-50">
+            <h4 class="font-bold text-slate-800 text-sm flex items-center gap-2 mb-2">
+              <span>✍️</span> <span id="txt-worked-head">Worked Step-by-Step Example</span>
+            </h4>
+            <p id="tutor-worked-problem" class="font-semibold text-blue-700 text-sm mb-3">Problem...</p>
+            <div id="tutor-worked-steps" class="space-y-2 text-sm text-slate-700">
+              <!-- Steps dynamically inserted -->
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200 font-bold text-sm text-emerald-700" id="tutor-worked-final">
+              Final Answer: ...
+            </div>
+          </div>
+
+          <!-- Practice Questions -->
+          <div>
+            <h4 class="font-bold text-slate-800 text-base mb-3 flex items-center gap-2">
+              <span>✏️</span> <span id="txt-practice-head">Practice Questions (Instant Mastery Check)</span>
+            </h4>
+            <div id="tutor-practice-container" class="space-y-4">
+              <!-- Questions inserted dynamically -->
+            </div>
+          </div>
+
+          <!-- Encouragement Note -->
+          <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold flex items-center gap-2">
+            <span>🌟</span> <span id="tutor-encouragement">Keep going! You are doing great.</span>
+          </div>
+        </div>
+
+        <!-- Handwritten Answer / Notebook Upload Modal / Card -->
+        <div id="evaluator-card" class="hidden bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 space-y-6">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+            <div class="flex items-center gap-3">
+              <div class="p-2.5 bg-amber-50 text-amber-600 rounded-xl text-xl">📷</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-800" id="eval-title">Handwritten Notebook Evaluator</h3>
+                <p class="text-xs text-slate-500" id="eval-subtitle">Upload a photo of your notebook calculation or type your steps</p>
+              </div>
+            </div>
+            <button onclick="closeEvaluatorModal()" class="text-slate-400 hover:text-slate-600 font-bold text-lg">&times;</button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Target Concept</label>
+                <select id="eval-concept-select" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm font-medium focus:ring-2 focus:ring-blue-500">
+                  <option value="simp_eq_solve">Solving Simple Equations (x + 5 = 12)</option>
+                  <option value="int_add_sub">Addition & Subtraction of Integers</option>
+                  <option value="frac_add_sub">Addition of Unlike Fractions</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Type or Paste Notebook Steps</label>
+                <textarea id="eval-steps-input" rows="3" placeholder="e.g. x + 5 = 12&#10;x = 12 + 5&#10;x = 17"
+                          class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-mono text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Or Photo of Notebook (JPEG/PNG max 5MB)</label>
+                <input type="file" id="eval-image-file" accept="image/*" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+              </div>
+
+              <button onclick="submitNotebookWork()" class="w-full py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl text-sm shadow transition flex items-center justify-center gap-2">
+                <span>🔍</span> <span id="btn-eval-submit">Analyze Steps & Find Mistakes</span>
+              </button>
+            </div>
+
+            <!-- Evaluator Results Pane -->
+            <div id="eval-result-pane" class="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex flex-col justify-center text-center">
+              <span class="text-3xl mb-2">📝</span>
+              <p class="text-sm font-medium text-slate-500">Submit steps or a photo to see line-by-line verification.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ============================================================= -->
+    <!-- 2. TEACHER DASHBOARD -->
+    <!-- ============================================================= -->
+    <div id="teacher-portal" class="hidden space-y-6">
+
+      <!-- Header & Class Action Bar -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+        <div>
+          <div class="flex items-center gap-2">
+            <h2 class="text-2xl font-extrabold text-slate-800" id="teacher-class-heading">Class 7 - Mathematics (Section B)</h2>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700">Active</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-1">
+            Join Code: <span class="font-mono font-bold text-blue-600 text-sm">VIDYA7</span> • ZP School Pune • Teacher Sharma
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button onclick="triggerOneClickMiniLesson()" class="px-4 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-xs rounded-xl shadow-md hover:from-blue-700 hover:to-indigo-700 transition flex items-center gap-2">
+            <span>⚡</span> <span id="btn-generate-mini-lesson">1-Click Mini-Lesson (15 min)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Class KPIs -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Enrolled</span>
+          <div class="flex items-baseline gap-2 mt-2">
+            <span class="text-3xl font-extrabold text-slate-800" id="kpi-total-students">5</span>
+            <span class="text-xs text-slate-500 font-medium">Students</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Class Average Mastery</span>
+          <div class="flex items-baseline gap-2 mt-2">
+            <span class="text-3xl font-extrabold text-blue-600" id="kpi-avg-mastery">68%</span>
+            <span class="text-xs text-emerald-600 font-semibold">&uarr; +18% this week</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Needs Attention</span>
+          <div class="flex items-baseline gap-2 mt-2">
+            <span class="text-3xl font-extrabold text-rose-600" id="kpi-at-risk-count">2</span>
+            <span class="text-xs text-rose-500 font-medium">At-Risk Students (&ge;2 weak concepts)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actionable Insights & Mini Lesson Container (If Generated) -->
+      <div id="mini-lesson-banner" class="hidden bg-gradient-to-br from-indigo-900 to-blue-900 text-white rounded-2xl p-6 shadow-md space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-1 bg-amber-400 text-slate-900 rounded-full text-xs font-extrabold tracking-wide uppercase">Teacher Mini-Lesson</span>
+            <span class="text-xs text-blue-200">15 Minutes • Zero Equipment Needed</span>
+          </div>
+          <button onclick="document.getElementById('mini-lesson-banner').classList.add('hidden')" class="text-blue-300 hover:text-white">&times;</button>
+        </div>
+
+        <h3 class="text-xl font-extrabold" id="mini-lesson-title">15-Minute Remedial Plan: Addition & Subtraction of Integers</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <div class="bg-white/10 rounded-xl p-3.5 backdrop-blur-sm border border-white/10">
+            <span class="font-bold text-amber-300 uppercase block mb-1">1. Hook Activity (3 mins)</span>
+            <p id="mini-lesson-hook" class="text-blue-50 leading-relaxed"></p>
+          </div>
+          <div class="bg-white/10 rounded-xl p-3.5 backdrop-blur-sm border border-white/10">
+            <span class="font-bold text-amber-300 uppercase block mb-1">2. Core Misconception Clarification (5 mins)</span>
+            <p id="mini-lesson-clarify" class="text-blue-50 leading-relaxed"></p>
+          </div>
+          <div class="bg-white/10 rounded-xl p-3.5 backdrop-blur-sm border border-white/10">
+            <span class="font-bold text-amber-300 uppercase block mb-1">3. Pair Blackboard Practice (5 mins)</span>
+            <p id="mini-lesson-practice" class="text-blue-50 leading-relaxed"></p>
+          </div>
+          <div class="bg-white/10 rounded-xl p-3.5 backdrop-blur-sm border border-white/10">
+            <span class="font-bold text-amber-300 uppercase block mb-1">4. Exit Ticket Check (2 mins)</span>
+            <p id="mini-lesson-exit" class="text-blue-50 leading-relaxed"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two-column Layout: Heatmap (Left/Top) & Needs Attention (Right/Bottom) -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Heatmap Grid (2 cols) -->
+        <div class="lg:col-span-2 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-lg font-bold text-slate-800">Class Heatmap (Students &times; Concepts)</h3>
+              <p class="text-xs text-slate-500">Color-coded by BKT mastery probability. Click on any student to view root gaps.</p>
+            </div>
+            <div class="flex items-center gap-3 text-xs font-semibold">
+              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-emerald-400"></span> &ge;85% Mastered</span>
+              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-amber-400"></span> 50-84% Dev.</span>
+              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-rose-400"></span> &lt;50% Weak</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left border-collapse">
+              <thead>
+                <tr class="border-b border-slate-200 text-slate-500">
+                  <th class="py-3 px-3 font-bold">Student</th>
+                  <th class="py-3 px-2 text-center font-bold">Integers: Basic</th>
+                  <th class="py-3 px-2 text-center font-bold">Int: Add/Sub</th>
+                  <th class="py-3 px-2 text-center font-bold">Frac: Types</th>
+                  <th class="py-3 px-2 text-center font-bold">Frac: Add/Sub</th>
+                  <th class="py-3 px-2 text-center font-bold">Simple Eq</th>
+                </tr>
+              </thead>
+              <tbody id="heatmap-table-body" class="divide-y divide-slate-100">
+                <!-- Dynamically populated rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Needs Attention Roster (1 col) -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold text-slate-800">Needs Attention List</h3>
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-rose-100 text-rose-700" id="badge-at-risk-count">2 at risk</span>
+          </div>
+          <p class="text-xs text-slate-500">Students with foundational blockers or multiple unmastered concepts.</p>
+
+          <div id="at-risk-student-list" class="space-y-3">
+            <!-- Dynamically populated list -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Student Drilldown Detail Modal -->
+    <div id="student-modal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+          <div>
+            <h4 class="text-lg font-bold text-slate-800" id="modal-student-name">Student Detail</h4>
+            <p class="text-xs text-slate-500" id="modal-student-meta">Class 7B • Enrolled</p>
+          </div>
+          <button onclick="closeStudentModal()" class="text-slate-400 hover:text-slate-600 font-bold text-xl">&times;</button>
+        </div>
+
+        <div id="modal-root-gap-alert" class="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900">
+          <!-- Root gap info -->
+        </div>
+
+        <div>
+          <h5 class="text-xs font-bold text-slate-600 uppercase mb-2">Concept Mastery Breakdown</h5>
+          <div id="modal-concept-list" class="space-y-2 max-h-60 overflow-y-auto pr-1 text-xs">
+            <!-- Concept bars -->
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-slate-100 text-right">
+          <button onclick="closeStudentModal()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400">
+    VidyaSaathi (विद्यासाथी) • Agentic AI Prerequisite Diagnosis & Multi-vernacular Tutoring for Low-Resource Schools
+  </footer>
+
+  <!-- Application Logic & State -->
+  <script>
+    // State
+    let currentLang = 'en';
+    let currentStudent = null;
+    let currentSession = null;
+    let currentDiagnosticQ = null;
+
+    // Trilingual UI strings
+    const I18N = {
+      en: {
+        welcomeTitle: "Welcome to VidyaSaathi!",
+        welcomeSub: "Join your Class 7 Mathematics room. No real name or phone needed!",
+        joinBtn: "Start My Learning Journey",
+        studentTab: "Student Portal",
+        teacherTab: "Teacher Dashboard",
+        retakeDiag: "Diagnostic Test",
+        openTutor: "Tutor Room",
+        openNotebook: "Notebook Check",
+        planHeading: "Your Personalized Learning Path",
+        intuitiveHead: "Intuitive Explanation & Daily Analogy",
+        workedHead: "Worked Step-by-Step Example",
+        practiceHead: "Practice Questions (Instant Mastery Check)",
+        audioText: "Listen (बोलकर सुनाएं)"
+      },
+      hi: {
+        welcomeTitle: "विद्यासाथी में आपका स्वागत है!",
+        welcomeSub: "कक्षा 7 गणित कक्षा में जुड़ें। किसी फ़ोन नंबर या असली नाम की आवश्यकता नहीं है!",
+        joinBtn: "मेरी सीखने की यात्रा शुरू करें",
+        studentTab: "विद्यार्थी पोर्टल",
+        teacherTab: "शिक्षक डॅशबोर्ड",
+        retakeDiag: "निदान परीक्षा (डायग्नोस्टिक)",
+        openTutor: "साथी ट्यूटर कक्ष",
+        openNotebook: "कॉपी जांचें (नोटबुक)",
+        planHeading: "आपकी व्यक्तिगत अभ्यास योजना",
+        intuitiveHead: "सहज व्याख्या एवं दैनिक जीवन का उदाहरण",
+        workedHead: "हल किया गया नमुना उदाहरण",
+        practiceHead: "अभ्यास प्रश्न (त्वरित दक्षता जांच)",
+        audioText: "सुनिए (ऑडियो व्याख्या)"
+      },
+      mr: {
+        welcomeTitle: "विद्यासाथी मध्ये आपले स्वागत आहे!",
+        welcomeSub: "इयत्ता ७ वी गणित वर्गात सहभागी व्हा. फोन नंबर किंवा खऱ्या नावाची आवश्यकता नाही!",
+        joinBtn: "माझा अभ्यास प्रवास सुरू करा",
+        studentTab: "विद्यार्थी पोर्टल",
+        teacherTab: "शिक्षक डॅशबोर्ड",
+        retakeDiag: "निदान चाचणी (डायग्नोस्टिक)",
+        openTutor: "साथी ट्यूटर कक्ष",
+        openNotebook: "वही तपासा (नोटबुक)",
+        planHeading: "तुमचा वैयक्तिक अभ्यास आराखडा",
+        intuitiveHead: "सोप्या भाषेतील स्पष्टीकरण व दैनंदिन उदाहरण",
+        workedHead: "सोडवलेले नमुना उदाहरण",
+        practiceHead: "सराव प्रश्न (त्वरित क्षमता चाचणी)",
+        audioText: "ऐका (ऑडिओ स्पष्टीकरण)"
+      }
+    };
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      ['en', 'hi', 'mr'].forEach(l => {
+        const btn = document.getElementById(`lang-${l}`);
+        if (l === lang) {
+          btn.className = "px-2.5 py-1 text-xs font-semibold rounded-md bg-white text-blue-700 shadow-sm transition";
+        } else {
+          btn.className = "px-2.5 py-1 text-xs font-semibold rounded-md text-slate-600 hover:text-slate-900 transition";
+        }
+      });
+
+      // Update UI text strings
+      const d = I18N[lang];
+      document.getElementById('txt-welcome-title').textContent = d.welcomeTitle;
+      document.getElementById('txt-welcome-sub').textContent = d.welcomeSub;
+      document.getElementById('txt-btn-join').textContent = d.joinBtn;
+      document.getElementById('label-student-tab').textContent = d.studentTab;
+      document.getElementById('label-teacher-tab').textContent = d.teacherTab;
+      document.getElementById('btn-retake-diag').textContent = d.retakeDiag;
+      document.getElementById('btn-open-tutor').textContent = d.openTutor;
+      document.getElementById('btn-open-notebook').textContent = d.openNotebook;
+      document.getElementById('btn-audio-text').textContent = d.audioText;
+
+      // If tutor room is open, reload it in target language
+      const tutorCard = document.getElementById('tutor-room-card');
+      if (!tutorCard.classList.contains('hidden')) {
+        loadTutorRoom('int_add_sub');
+      }
+    }
+
+    function switchPortal(portal) {
+      if (portal === 'student') {
+        document.getElementById('student-portal').classList.remove('hidden');
+        document.getElementById('teacher-portal').classList.add('hidden');
+        document.getElementById('tab-student').className = "px-3.5 py-1.5 text-xs font-bold rounded-lg bg-blue-600 text-white shadow transition flex items-center gap-1.5";
+        document.getElementById('tab-teacher').className = "px-3.5 py-1.5 text-xs font-bold rounded-lg text-blue-800 hover:bg-blue-100/50 transition flex items-center gap-1.5";
+      } else {
+        document.getElementById('student-portal').classList.add('hidden');
+        document.getElementById('teacher-portal').classList.remove('hidden');
+        document.getElementById('tab-teacher').className = "px-3.5 py-1.5 text-xs font-bold rounded-lg bg-blue-600 text-white shadow transition flex items-center gap-1.5";
+        document.getElementById('tab-student').className = "px-3.5 py-1.5 text-xs font-bold rounded-lg text-blue-800 hover:bg-blue-100/50 transition flex items-center gap-1.5";
+        loadTeacherDashboard();
+      }
+    }
+
+    // ==========================================
+    // Student Functions
+    // ==========================================
+
+    async function handleJoinClass(e) {
+      e.preventDefault();
+      const code = document.getElementById('input-join-code').value.trim();
+      const nickname = document.getElementById('input-nickname').value.trim();
+
+      try {
+        const res = await fetch('/classes/join', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ join_code: code, nickname: nickname, preferred_language: currentLang })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || 'Could not join');
+
+        currentStudent = data;
+        document.getElementById('student-onboarding').classList.add('hidden');
+        document.getElementById('student-active-area').classList.remove('hidden');
+        document.getElementById('student-greeting').textContent = `Namaste, ${data.nickname}!`;
+
+        // Automatically initiate diagnostic for new student
+        startDiagnostic();
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+
+    async function startDiagnostic() {
+      if (!currentStudent) {
+        currentStudent = { student_id: 's_priya', nickname: 'Priya', language: currentLang };
+        document.getElementById('student-onboarding').classList.add('hidden');
+        document.getElementById('student-active-area').classList.remove('hidden');
+        document.getElementById('student-greeting').textContent = `Namaste, ${currentStudent.nickname}!`;
+      }
+
+      document.getElementById('diagnostic-card').classList.remove('hidden');
+      document.getElementById('diagnostic-report-card').classList.add('hidden');
+      document.getElementById('tutor-room-card').classList.add('hidden');
+      document.getElementById('evaluator-card').classList.add('hidden');
+
+      const res = await fetch('/diagnostic/start', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ student_id: currentStudent.student_id, language: currentLang })
+      });
+      const data = await res.json();
+      currentSession = data;
+      renderDiagnosticQuestion(data);
+    }
+
+    function renderDiagnosticQuestion(stepData) {
+      if (stepData.is_complete) {
+        document.getElementById('diagnostic-card').classList.add('hidden');
+        renderDiagnosticReport(stepData.diagnostic_report);
+        return;
+      }
+
+      const q = stepData.question;
+      currentDiagnosticQ = q;
+      document.getElementById('diag-q-index').textContent = `Question ${stepData.current_question_index + 1} of ${stepData.total_questions}`;
+      document.getElementById('diag-question-text').textContent = q.question_text;
+      const progressPercent = Math.round(((stepData.current_question_index) / stepData.total_questions) * 100);
+      document.getElementById('diag-progress-bar').style.width = `${progressPercent}%`;
+
+      const optContainer = document.getElementById('diag-options-container');
+      optContainer.innerHTML = '';
+
+      q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = "p-4 text-left rounded-xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 font-medium text-slate-800 transition flex items-center justify-between";
+        btn.innerHTML = `<span><strong class="text-blue-600 mr-2">${opt.id}.</strong> ${opt.text}</span>`;
+        btn.onclick = () => submitDiagnosticAnswer(opt.id);
+        optContainer.appendChild(btn);
+      });
+    }
+
+    async function submitDiagnosticAnswer(optionId) {
+      const payload = {
+        session_id: currentSession.session_id,
+        student_id: currentStudent.student_id,
+        question_id: currentDiagnosticQ.id,
+        selected_option_id: optionId
+      };
+
+      const res = await fetch('/diagnostic/answer', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      });
+      const nextStep = await res.json();
+      currentSession = nextStep;
+      renderDiagnosticQuestion(nextStep);
+    }
+
+    function renderDiagnosticReport(report) {
+      document.getElementById('diagnostic-report-card').classList.remove('hidden');
+      document.getElementById('rpt-summary-text').textContent = report.overall_summary;
+
+      const gapBox = document.getElementById('rpt-root-gap-box');
+      if (report.root_gaps && report.root_gaps.length > 0) {
+        gapBox.classList.remove('hidden');
+        const gap = report.root_gaps[0];
+        const explText = gap.explanation[currentLang] || gap.explanation.en;
+        document.getElementById('rpt-root-gap-text').textContent = explText;
+      } else {
+        gapBox.classList.add('hidden');
+      }
+
+      // Fetch personalized learning plan
+      fetchPlan(report.student_id);
+    }
+
+    async function fetchPlan(studentId) {
+      const res = await fetch(`/plan/${studentId}?language=${currentLang}`);
+      const plan = await res.json();
+
+      const container = document.getElementById('rpt-plan-items');
+      container.innerHTML = '';
+
+      plan.learning_path.forEach(item => {
+        const div = document.createElement('div');
+        div.className = `p-4 rounded-xl border flex items-center justify-between ${
+          item.is_root_gap ? 'bg-amber-50/60 border-amber-300' : 'bg-slate-50 border-slate-200'
+        }`;
+        div.innerHTML = `
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">${item.sequence_order}</span>
+              <h5 class="font-bold text-slate-800 text-sm">${item.concept_name}</h5>
+              ${item.is_root_gap ? '<span class="text-xs bg-amber-200 text-amber-800 font-bold px-2 py-0.5 rounded-full">Root Gap</span>' : ''}
+            </div>
+            <p class="text-xs text-slate-500 mt-1 pl-8">${item.reason}</p>
+          </div>
+          <button onclick="loadTutorRoom('${item.concept_id}')" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-lg shadow-sm transition">
+            Start Lesson
+          </button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    // ==========================================
+    // Tutor Room & TTS
+    // ==========================================
+
+    async function loadTutorRoom(conceptId) {
+      document.getElementById('diagnostic-card').classList.add('hidden');
+      document.getElementById('diagnostic-report-card').classList.add('hidden');
+      document.getElementById('evaluator-card').classList.add('hidden');
+      document.getElementById('tutor-room-card').classList.remove('hidden');
+
+      const sid = currentStudent ? currentStudent.student_id : 's_priya';
+      const res = await fetch('/tutor/lesson', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ student_id: sid, concept_id: conceptId, language: currentLang })
+      });
+      const lesson = await res.json();
+
+      document.getElementById('tutor-concept-title').textContent = lesson.concept_title;
+      document.getElementById('tutor-lang-tag').textContent = currentLang.toUpperCase();
+      document.getElementById('tutor-explanation-text').textContent = lesson.intuitive_explanation;
+
+      // Worked Example
+      document.getElementById('tutor-worked-problem').textContent = lesson.worked_example.problem_statement;
+      const stepsDiv = document.getElementById('tutor-worked-steps');
+      stepsDiv.innerHTML = '';
+      lesson.worked_example.steps.forEach(st => {
+        const p = document.createElement('p');
+        p.className = "p-2 bg-white rounded-lg border border-slate-200";
+        p.innerHTML = `<strong>Step ${st.step_number}:</strong> ${st.explanation} <br><span class="font-mono text-blue-600 font-semibold">${st.math_expression}</span>`;
+        stepsDiv.appendChild(p);
+      });
+      document.getElementById('tutor-worked-final').textContent = `Final Answer: ${lesson.worked_example.final_answer}`;
+
+      // Practice Questions
+      const pracDiv = document.getElementById('tutor-practice-container');
+      pracDiv.innerHTML = '';
+      lesson.practice_questions.forEach((pq, idx) => {
+        const qCard = document.createElement('div');
+        qCard.className = "p-4 rounded-xl border border-slate-200 bg-white space-y-3";
+        qCard.innerHTML = `
+          <p class="font-semibold text-slate-800 text-sm"><strong>Q${idx+1}.</strong> ${pq.question_text}</p>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            ${pq.options.map((opt, oIdx) => `
+              <button onclick="handlePracticeOption(${idx}, ${oIdx}, ${pq.correct_option_index}, '${conceptId}', this)"
+                      class="p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-left font-medium transition">
+                ${String.fromCharCode(65+oIdx)}. ${opt}
+              </button>
+            `).join('')}
+          </div>
+          <p class="text-xs text-slate-400 italic">Hint: ${pq.hint}</p>
+        `;
+        pracDiv.appendChild(qCard);
+      });
+
+      document.getElementById('tutor-encouragement').textContent = lesson.encouragement_note;
+    }
+
+    function handlePracticeOption(qIndex, selectedIndex, correctIndex, conceptId, btnElement) {
+      const isCorrect = (selectedIndex === correctIndex);
+      if (isCorrect) {
+        btnElement.className = "p-2.5 rounded-lg border border-emerald-500 bg-emerald-50 text-emerald-800 font-bold text-left";
+        btnElement.innerHTML += " ✓ Correct!";
+      } else {
+        btnElement.className = "p-2.5 rounded-lg border border-rose-500 bg-rose-50 text-rose-800 font-bold text-left";
+        btnElement.innerHTML += " ✗ Try again";
+      }
+    }
+
+    function speakExplanation() {
+      const text = document.getElementById('tutor-explanation-text').textContent;
+      if (!('speechSynthesis' in window)) {
+        alert("Text-to-Speech is not supported in this browser.");
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      if (currentLang === 'hi') utterance.lang = 'hi-IN';
+      else if (currentLang === 'mr') utterance.lang = 'mr-IN';
+      else utterance.lang = 'en-IN';
+
+      utterance.rate = 0.95;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // ==========================================
+    // Handwritten Notebook Evaluator
+    // ==========================================
+
+    function openEvaluatorModal() {
+      document.getElementById('evaluator-card').classList.remove('hidden');
+      document.getElementById('diagnostic-card').classList.add('hidden');
+      document.getElementById('diagnostic-report-card').classList.add('hidden');
+      document.getElementById('tutor-room-card').classList.add('hidden');
+    }
+
+    function closeEvaluatorModal() {
+      document.getElementById('evaluator-card').classList.add('hidden');
+    }
+
+    async function submitNotebookWork() {
+      const text = document.getElementById('eval-steps-input').value.trim();
+      const conceptId = document.getElementById('eval-concept-select').value;
+      const fileInput = document.getElementById('eval-image-file');
+
+      let base64Img = null;
+      if (fileInput.files && fileInput.files[0]) {
+        base64Img = await toBase64(fileInput.files[0]);
+      }
+
+      const resPane = document.getElementById('eval-result-pane');
+      resPane.innerHTML = `<p class="text-sm text-blue-600 font-bold animate-pulse">Analyzing steps with VidyaSaathi Evaluator Agent...</p>`;
+
+      const sid = currentStudent ? currentStudent.student_id : 's_vikram';
+      const payload = {
+        student_id: sid,
+        question_id: 'q_eval_custom',
+        concept_id: conceptId,
+        student_answer_text: text || null,
+        image_base64: base64Img,
+        language: currentLang
+      };
+
+      try {
+        const res = await fetch('/evaluate/answer', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+
+        resPane.className = `rounded-2xl p-5 border text-left space-y-3 ${
+          data.is_correct ? 'bg-emerald-50 border-emerald-300' : 'bg-rose-50 border-rose-300'
+        }`;
+
+        let stepsHtml = '';
+        if (data.steps_analysis) {
+          stepsHtml = data.steps_analysis.map(st => `
+            <div class="text-xs p-2 rounded-lg ${st.is_valid ? 'bg-white text-slate-800' : 'bg-rose-100 text-rose-900 font-bold border border-rose-200'}">
+              <span>Step ${st.step_number}: ${st.step_content}</span>
+              ${st.comment ? `<p class="text-[11px] text-slate-500 font-normal mt-0.5">${st.comment}</p>` : ''}
+            </div>
+          `).join('');
+        }
+
+        resPane.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="text-lg">${data.is_correct ? '🎉' : '⚠️'}</span>
+            <h4 class="font-bold text-sm ${data.is_correct ? 'text-emerald-800' : 'text-rose-800'}">
+              ${data.is_correct ? 'All Steps Correct!' : `Error Identified at Step ${data.first_error_step || 1}`}
+            </h4>
+          </div>
+          <div class="space-y-1.5">${stepsHtml}</div>
+          <div class="p-3 bg-white rounded-xl border border-slate-200 text-xs text-slate-800">
+            <strong>Constructive Feedback:</strong> ${data.constructive_feedback}
+          </div>
+        `;
+      } catch (err) {
+        resPane.innerHTML = `<p class="text-xs text-rose-600 font-bold">Error: ${err.message}</p>`;
+      }
+    }
+
+    function toBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result.split(',')[1]);
+        reader.onerror = error => reject(error);
+      });
+    }
+
+    // ==========================================
+    // Teacher Dashboard Functions
+    // ==========================================
+
+    async function loadTeacherDashboard() {
+      const classId = 'class_7b_pune';
+      try {
+        // 1. Fetch Heatmap
+        const hmRes = await fetch(`/teacher/class/${classId}/heatmap`);
+        const hmData = await hmRes.json();
+        renderHeatmap(hmData);
+
+        // 2. Fetch Insights
+        const insRes = await fetch(`/teacher/class/${classId}/insights?language=${currentLang}`);
+        const insData = await insRes.json();
+        renderInsights(insData);
+      } catch (err) {
+        console.error('Failed to load teacher dashboard', err);
+      }
+    }
+
+    function renderHeatmap(data) {
+      const tbody = document.getElementById('heatmap-table-body');
+      tbody.innerHTML = '';
+
+      const targetConcepts = ['int_basic', 'int_add_sub', 'frac_proper_improper', 'frac_add_sub', 'simp_eq_solve'];
+
+      data.students_heatmap.forEach(s => {
+        const tr = document.createElement('tr');
+        tr.className = "hover:bg-slate-50 cursor-pointer transition";
+        tr.onclick = () => openStudentModal(s.student_id);
+
+        let cellsHtml = `<td class="py-3 px-3 font-bold text-slate-800">${s.nickname} <span class="text-[10px] text-slate-400 block">${s.language.toUpperCase()}</span></td>`;
+
+        targetConcepts.forEach(cid => {
+          const score = s.scores[cid] || { p_mastery: 0.15, status: 'weak' };
+          let badgeClass = 'badge-weak';
+          if (score.status === 'mastered') badgeClass = 'badge-mastered';
+          else if (score.status === 'developing') badgeClass = 'badge-developing';
+
+          cellsHtml += `
+            <td class="py-3 px-2 text-center">
+              <span class="inline-block px-2 py-1 rounded-md text-[11px] font-bold ${badgeClass}">
+                ${Math.round(score.p_mastery * 100)}%
+              </span>
+            </td>
+          `;
+        });
+
+        tr.innerHTML = cellsHtml;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function renderInsights(data) {
+      document.getElementById('kpi-total-students').textContent = data.total_students;
+      document.getElementById('kpi-avg-mastery').textContent = `${Math.round(data.class_average_mastery * 100)}%`;
+      document.getElementById('kpi-at-risk-count').textContent = data.needs_attention_students.length;
+      document.getElementById('badge-at-risk-count').textContent = `${data.needs_attention_students.length} at risk`;
+
+      // Render at-risk students
+      const listDiv = document.getElementById('at-risk-student-list');
+      listDiv.innerHTML = '';
+
+      if (data.needs_attention_students.length === 0) {
+        listDiv.innerHTML = '<p class="text-xs text-emerald-600 font-bold">All students performing well!</p>';
+      } else {
+        data.needs_attention_students.forEach(st => {
+          const item = document.createElement('div');
+          item.className = "p-3 rounded-xl border border-rose-200 bg-rose-50/50 flex items-center justify-between cursor-pointer hover:bg-rose-50";
+          item.onclick = () => openStudentModal(st.student_id);
+          item.innerHTML = `
+            <div>
+              <h5 class="font-bold text-slate-800 text-xs">${st.nickname}</h5>
+              <p class="text-[11px] text-rose-700">${st.risk_reason}</p>
+            </div>
+            <span class="text-xs text-rose-600 font-bold">&rarr;</span>
+          `;
+          listDiv.appendChild(item);
+        });
+      }
+    }
+
+    async function triggerOneClickMiniLesson() {
+      const classId = 'class_7b_pune';
+      const res = await fetch(`/teacher/class/${classId}/mini-lesson`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ class_id: classId, language: currentLang })
+      });
+      const lesson = await res.json();
+
+      const banner = document.getElementById('mini-lesson-banner');
+      banner.classList.remove('hidden');
+      document.getElementById('mini-lesson-title').textContent = lesson.title;
+      document.getElementById('mini-lesson-hook').textContent = lesson.hook_activity;
+      document.getElementById('mini-lesson-clarify').textContent = lesson.concept_clarification;
+      document.getElementById('mini-lesson-practice').textContent = lesson.pair_practice_problem;
+      document.getElementById('mini-lesson-exit').textContent = lesson.exit_ticket_question;
+
+      banner.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    async function openStudentModal(studentId) {
+      const res = await fetch(`/teacher/student/${studentId}?language=${currentLang}`);
+      const data = await res.json();
+
+      document.getElementById('modal-student-name').textContent = data.nickname;
+      document.getElementById('modal-student-meta').textContent = `Class 7B • Language: ${data.language.toUpperCase()}`;
+
+      const gapBox = document.getElementById('modal-root-gap-alert');
+      if (data.root_gaps && data.root_gaps.length > 0) {
+        gapBox.classList.remove('hidden');
+        const g = data.root_gaps[0];
+        gapBox.innerHTML = `<strong>Root Gap Detected:</strong> ${g.explanation[currentLang] || g.explanation.en}`;
+      } else {
+        gapBox.classList.add('hidden');
+      }
+
+      const list = document.getElementById('modal-concept-list');
+      list.innerHTML = '';
+      data.concepts_mastery.slice(0, 10).forEach(c => {
+        const div = document.createElement('div');
+        div.className = "flex items-center justify-between p-2 rounded-lg bg-slate-50";
+        div.innerHTML = `
+          <span class="font-medium text-slate-700">${c.name}</span>
+          <span class="font-bold ${c.status === 'mastered' ? 'text-emerald-600' : (c.status === 'weak' ? 'text-rose-600' : 'text-amber-600')}">
+            ${Math.round(c.p_mastery * 100)}%
+          </span>
+        `;
+        list.appendChild(div);
+      });
+
+      document.getElementById('student-modal').classList.remove('hidden');
+    }
+
+    function closeStudentModal() {
+      document.getElementById('student-modal').classList.add('hidden');
+    }
+
+    // Service Worker Registration for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('PWA Service Worker registered:', reg.scope))
+          .catch(err => console.log('SW registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>

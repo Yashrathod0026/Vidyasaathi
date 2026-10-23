@@ -1,0 +1,662 @@
+[
+  {
+    "id": "q_int_basic_1",
+    "concept_id": "int_basic",
+    "difficulty": 1,
+    "type": "mcq",
+    "question_text": {
+      "en": "Which of the following numbers is the smallest?",
+      "hi": "निम्नलिखित में से कौन सी संख्या सबसे छोटी है?",
+      "mr": "खालीलपैकी कोणती संख्या सर्वात लहान आहे?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "-8", "hi": "-8", "mr": "-८" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "-2", "hi": "-2", "mr": "-२" },
+        "is_correct": false,
+        "misconception_id": "misc_int_magnitude_neg"
+      },
+      {
+        "id": "C",
+        "text": { "en": "0", "hi": "0", "mr": "०" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "3", "hi": "3", "mr": "३" },
+        "is_correct": false,
+        "misconception_id": null
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "On a number line, numbers further to the left are smaller. -8 is to the left of -2, 0, and 3, so -8 is the smallest.",
+      "hi": "संख्या रेखा पर जो संख्या बाईं ओर होती है वह छोटी होती है। -8 सबसे बाईं ओर है, इसलिए -8 सबसे छोटी संख्या है।",
+      "mr": "संख्या रेषेवर डावीकडील संख्या सर्वात लहान असते. -८ हे सर्वात डावीकडे असल्याने ते सर्वात लहान आहे."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_int_add_1",
+    "concept_id": "int_add_sub",
+    "difficulty": 1,
+    "type": "mcq",
+    "question_text": {
+      "en": "What is the value of (-5) + (-3)?",
+      "hi": "(-5) + (-3) का मान क्या होगा?",
+      "mr": "(-५) + (-३) चे मूल्य काय असेल?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "-8", "hi": "-8", "mr": "-८" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "-2", "hi": "-2", "mr": "-२" },
+        "is_correct": false,
+        "misconception_id": "misc_int_sign_add"
+      },
+      {
+        "id": "C",
+        "text": { "en": "8", "hi": "8", "mr": "८" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "2", "hi": "2", "mr": "२" },
+        "is_correct": false,
+        "misconception_id": "misc_int_sign_add"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "When adding two negative numbers, add their absolute values (5 + 3 = 8) and keep the negative sign: -8.",
+      "hi": "दो ऋणात्मक संख्याओं को जोड़ने पर उनके मान जुड़ते हैं और चिन्ह ऋण ही रहता है: 5 + 3 = 8, अतः -8।",
+      "mr": "दोन ऋण संख्यांची बेरीज करताना संख्यांची बेरीज करून ऋण चिन्ह देतात: -८."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_int_add_2",
+    "concept_id": "int_add_sub",
+    "difficulty": 2,
+    "type": "mcq",
+    "question_text": {
+      "en": "Calculate: 7 - (-4)",
+      "hi": "मान निकालिए: 7 - (-4)",
+      "mr": "गणना करा: ७ - (-४)"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "11", "hi": "11", "mr": "११" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "3", "hi": "3", "mr": "३" },
+        "is_correct": false,
+        "misconception_id": "misc_double_negative"
+      },
+      {
+        "id": "C",
+        "text": { "en": "-11", "hi": "-11", "mr": "-११" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "-3", "hi": "-3", "mr": "-३" },
+        "is_correct": false,
+        "misconception_id": "misc_double_negative"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "Subtracting a negative number is equivalent to adding the positive: 7 - (-4) = 7 + 4 = 11.",
+      "hi": "ऋणात्मक संख्या को घटाने का अर्थ धनात्मक जोड़ना है: 7 - (-4) = 7 + 4 = 11।",
+      "mr": "ऋण संख्या वजा करणे म्हणजे ती मिळवणे: ७ - (-४) = ७ + ४ = ११."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_int_mul_1",
+    "concept_id": "int_mul_div",
+    "difficulty": 2,
+    "type": "mcq",
+    "question_text": {
+      "en": "What is (-6) * (-4)?",
+      "hi": "(-6) * (-4) का मान क्या होगा?",
+      "mr": "(-६) * (-४) चे उत्तर काय असेल?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "24", "hi": "24", "mr": "२४" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "-24", "hi": "-24", "mr": "-२४" },
+        "is_correct": false,
+        "misconception_id": "misc_mul_sign_rule"
+      },
+      {
+        "id": "C",
+        "text": { "en": "-10", "hi": "-10", "mr": "-१०" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "10", "hi": "10", "mr": "१०" },
+        "is_correct": false,
+        "misconception_id": null
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "The product of two negative integers is always positive: (-6) * (-4) = +24.",
+      "hi": "दो ऋणात्मक पूर्णांकों का गुणनफल सदैव धनात्मक होता है: (-6) * (-4) = +24।",
+      "mr": "दोन ऋण पूर्णांकांचा गुणाकार नेहमी धन येतो: (-६) * (-४) = +२४."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_frac_type_1",
+    "concept_id": "frac_proper_improper",
+    "difficulty": 1,
+    "type": "mcq",
+    "question_text": {
+      "en": "Which fraction is larger: 1/2 or 1/4?",
+      "hi": "कौन सा भिन्न बड़ा है: 1/2 या 1/4?",
+      "mr": "कोणता अपूर्णांक मोठा आहे: १/२ की १/४?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "1/2 is larger", "hi": "1/2 बड़ा है", "mr": "१/२ मोठा आहे" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "1/4 is larger", "hi": "1/4 बड़ा है", "mr": "१/४ मोठा आहे" },
+        "is_correct": false,
+        "misconception_id": "misc_frac_separate_numbers"
+      },
+      {
+        "id": "C",
+        "text": { "en": "Both are equal", "hi": "दोनों बराबर हैं", "mr": "दोन्ही समान आहेत" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "Cannot be compared", "hi": "तुलना नहीं की जा सकती", "mr": "तुलना करता येत नाही" },
+        "is_correct": false,
+        "misconception_id": null
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "1/2 represents half of the whole, while 1/4 is only a quarter. Dividing into fewer parts yields larger pieces, so 1/2 > 1/4.",
+      "hi": "1/2 आधा हिस्सा है जबकि 1/4 केवल चौथाई। 1 रोटी के 2 टुकड़े करने पर टुकड़ा बड़ा मिलता है, अतः 1/2 > 1/4।",
+      "mr": "१/२ म्हणजे अर्धा भाग तर १/४ म्हणजे पाव भाग. २ तुकडे केल्यास भाग मोठा मिळतो, म्हणून १/२ > १/४."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_frac_add_1",
+    "concept_id": "frac_add_sub",
+    "difficulty": 2,
+    "type": "mcq",
+    "question_text": {
+      "en": "Evaluate: 1/2 + 1/3",
+      "hi": "हल कीजिए: 1/2 + 1/3",
+      "mr": "सोडवा: १/२ + १/३"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "5/6", "hi": "5/6", "mr": "५/६" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "2/5", "hi": "2/5", "mr": "२/५" },
+        "is_correct": false,
+        "misconception_id": "misc_frac_add_across"
+      },
+      {
+        "id": "C",
+        "text": { "en": "1/5", "hi": "1/5", "mr": "१/५" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "2/6", "hi": "2/6", "mr": "२/६" },
+        "is_correct": false,
+        "misconception_id": null
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "The LCM of denominators 2 and 3 is 6. Convert: 1/2 = 3/6 and 1/3 = 2/6. Sum = 3/6 + 2/6 = 5/6.",
+      "hi": "2 और 3 का ल.स.प. 6 है। 1/2 = 3/6 और 1/3 = 2/6। जोड़ = (3+2)/6 = 5/6।",
+      "mr": "२ आणि ३ चा लसावि ६ आहे. १/२ = ३/६ आणि १/३ = २/६. बेरीज = ३/६ + २/६ = ५/६."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_frac_div_1",
+    "concept_id": "frac_mul_div",
+    "difficulty": 2,
+    "type": "mcq",
+    "question_text": {
+      "en": "Solve: (3/4) / (2/5)",
+      "hi": "हल कीजिए: (3/4) / (2/5)",
+      "mr": "सोडवा: (३/४) / (२/५)"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "15/8", "hi": "15/8", "mr": "१५/८" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "8/15", "hi": "8/15", "mr": "८/१५" },
+        "is_correct": false,
+        "misconception_id": "misc_frac_div_invert_wrong"
+      },
+      {
+        "id": "C",
+        "text": { "en": "6/20", "hi": "6/20", "mr": "६/२०" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "5/6", "hi": "5/6", "mr": "५/६" },
+        "is_correct": false,
+        "misconception_id": null
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "Divide fractions by multiplying by the reciprocal of the divisor: (3/4) * (5/2) = 15/8.",
+      "hi": "भाजक का व्युत्क्रम करके गुणा करें: (3/4) * (5/2) = 15/8।",
+      "mr": "दुसऱ्या अपूर्णांकाचा व्यस्त करून गुणाकार करा: (३/४) * (५/२) = १५/८."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_dec_place_1",
+    "concept_id": "dec_place_value",
+    "difficulty": 1,
+    "type": "mcq",
+    "question_text": {
+      "en": "Which decimal is larger: 0.7 or 0.25?",
+      "hi": "कौन सी दशमलव संख्या बड़ी है: 0.7 या 0.25?",
+      "mr": "कोणता दशांश मोठा आहे: ०.७ की ०.२५?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "0.7", "hi": "0.7", "mr": "०.७" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "0.25", "hi": "0.25", "mr": "०.२५" },
+        "is_correct": false,
+        "misconception_id": "misc_dec_longer_is_bigger"
+      },
+      {
+        "id": "C",
+        "text": { "en": "They are equal", "hi": "दोनों बराबर हैं", "mr": "दोन्ही समान आहेत" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "Cannot be determined", "hi": "तय नहीं किया जा सकता", "mr": "निश्चित सांगता येत नाही" },
+        "is_correct": false,
+        "misconception_id": null
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "0.7 is 0.70 (70 hundredths), which is larger than 0.25 (25 hundredths).",
+      "hi": "0.7 का अर्थ 0.70 (70 शतांश) है, जो 0.25 (25 शतांश) से बड़ा है।",
+      "mr": "०.७ म्हणजे ०.७०, जे ०.२५ पेक्षा मोठे आहे."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_dec_ops_1",
+    "concept_id": "dec_ops",
+    "difficulty": 2,
+    "type": "mcq",
+    "question_text": {
+      "en": "Find the sum: 3.5 + 1.25",
+      "hi": "जोड़ ज्ञात कीजिए: 3.5 + 1.25",
+      "mr": "बेरीज करा: ३.५ + १.२५"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "4.75", "hi": "4.75", "mr": "४.७५" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "1.60", "hi": "1.60", "mr": "१.६०" },
+        "is_correct": false,
+        "misconception_id": "misc_dec_align_right"
+      },
+      {
+        "id": "C",
+        "text": { "en": "4.30", "hi": "4.30", "mr": "४.३०" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "3.375", "hi": "3.375", "mr": "३.३७५" },
+        "is_correct": false,
+        "misconception_id": null
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "Align the decimal points: 3.50 + 1.25 = 4.75.",
+      "hi": "दशमलव बिंदुओं को सीध में रखें: 3.50 + 1.25 = 4.75।",
+      "mr": "दशांश चिन्ह एकाखाली एक मांडून बेरीज करा: ३.५० + १.२५ = ४.७५."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_simp_eq_1",
+    "concept_id": "simp_eq_solve",
+    "difficulty": 2,
+    "type": "mcq",
+    "question_text": {
+      "en": "If x + 5 = 12, what is the value of x?",
+      "hi": "यदि x + 5 = 12 है, तो x का मान क्या है?",
+      "mr": "जर x + ५ = १२ असेल, तर x ची किंमत किती?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "7", "hi": "7", "mr": "७" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "17", "hi": "17", "mr": "१७" },
+        "is_correct": false,
+        "misconception_id": "misc_transposition_sign"
+      },
+      {
+        "id": "C",
+        "text": { "en": "-7", "hi": "-7", "mr": "-७" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "60", "hi": "60", "mr": "६०" },
+        "is_correct": false,
+        "misconception_id": null
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "Transpose +5 to the right side by flipping its sign to -5: x = 12 - 5 = 7.",
+      "hi": "5 का पक्षांतर करने पर चिन्ह बदलकर ऋण हो जाएगा: x = 12 - 5 = 7।",
+      "mr": "+५ चे पक्षांतर करताना चिन्ह बदलून -५ होईल: x = १२ - ५ = ७."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_alg_add_1",
+    "concept_id": "alg_add_sub",
+    "difficulty": 2,
+    "type": "mcq",
+    "question_text": {
+      "en": "Simplify the expression: 2x + 3y + 4x",
+      "hi": "व्यंजक को सरल कीजिए: 2x + 3y + 4x",
+      "mr": "राशी सोपी करा: २x + ३y + ४x"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "6x + 3y", "hi": "6x + 3y", "mr": "६x + ३y" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "9xy", "hi": "9xy", "mr": "९xy" },
+        "is_correct": false,
+        "misconception_id": "misc_alg_add_unlike"
+      },
+      {
+        "id": "C",
+        "text": { "en": "5x + 3y", "hi": "5x + 3y", "mr": "५x + ३y" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "9x", "hi": "9x", "mr": "९x" },
+        "is_correct": false,
+        "misconception_id": null
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "Combine like terms containing x: (2x + 4x) + 3y = 6x + 3y. Unlike terms cannot be merged.",
+      "hi": "केवल समान पदों (x वाले) को जोड़ें: (2x + 4x) + 3y = 6x + 3y। असमान पद अलग रहेंगे।",
+      "mr": "फक्त स्वरूप पदांची बेरीज करा: (२x + ४x) + ३y = ६x + ३y."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_ratio_1",
+    "concept_id": "ratio_prop",
+    "difficulty": 2,
+    "type": "mcq",
+    "question_text": {
+      "en": "Find the ratio of 50 paise to ₹2 in simplest form.",
+      "hi": "50 पैसे और ₹2 का सरलतम अनुपात क्या है?",
+      "mr": "५० पैसे आणि २ रुपये यांचे संक्षिप्त गुणोत्तर काय आहे?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "1:4", "hi": "1:4", "mr": "१:४" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "25:1", "hi": "25:1", "mr": "२५:१" },
+        "is_correct": false,
+        "misconception_id": "misc_ratio_different_units"
+      },
+      {
+        "id": "C",
+        "text": { "en": "50:2", "hi": "50:2", "mr": "५०:२" },
+        "is_correct": false,
+        "misconception_id": "misc_ratio_different_units"
+      },
+      {
+        "id": "D",
+        "text": { "en": "1:2", "hi": "1:2", "mr": "१:२" },
+        "is_correct": false,
+        "misconception_id": null
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "Convert ₹2 into paise: ₹2 = 200 paise. Ratio = 50 : 200 = 1 : 4.",
+      "hi": "₹2 को पैसे में बदलें: ₹2 = 200 पैसे। अनुपात = 50 : 200 = 1 : 4।",
+      "mr": "२ रुपयांचे पैसे करा: २ रुपये = २०० पैसे. गुणोत्तर = ५० : २०० = १ : ४."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_lines_angles_1",
+    "concept_id": "lines_angles",
+    "difficulty": 1,
+    "type": "mcq",
+    "question_text": {
+      "en": "What is the complement of an angle of 35°?",
+      "hi": "35° के कोण का पूरक कोण क्या होगा?",
+      "mr": "३५° च्या कोनाचा कोटिकोन किती असेल?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "55°", "hi": "55°", "mr": "५५°" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "145°", "hi": "145°", "mr": "१४५°" },
+        "is_correct": false,
+        "misconception_id": "misc_angle_comp_supp_confuse"
+      },
+      {
+        "id": "C",
+        "text": { "en": "65°", "hi": "65°", "mr": "६५°" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "90°", "hi": "90°", "mr": "९०°" },
+        "is_correct": false,
+        "misconception_id": null
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "Complementary angles sum to 90°. Complement = 90° - 35° = 55°.",
+      "hi": "पूरक कोणों का योग 90° होता है। पूरक = 90° - 35° = 55°।",
+      "mr": "कोटिकोन म्हणजे ज्यांची बेरीज ९०° असते. कोटिकोन = ९०° - ३५° = ५५°."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_tri_prop_1",
+    "concept_id": "triangle_prop",
+    "difficulty": 1,
+    "type": "mcq",
+    "question_text": {
+      "en": "In a triangle, two angles are 60° and 70°. What is the third angle?",
+      "hi": "एक त्रिभुज में दो कोण 60° और 70° हैं। तीसरा कोण क्या होगा?",
+      "mr": "एका त्रिकोणात दोन कोन ६०° आणि ७०° आहेत. तिसरा कोन किती असेल?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "50°", "hi": "50°", "mr": "५०°" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "60°", "hi": "60°", "mr": "६०°" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "C",
+        "text": { "en": "130°", "hi": "130°", "mr": "१३०°" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "70°", "hi": "70°", "mr": "७०°" },
+        "is_correct": false,
+        "misconception_id": null
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "The sum of angles in a triangle is 180°. Third angle = 180° - (60° + 70°) = 180° - 130° = 50°.",
+      "hi": "त्रिभुज के तीनों कोणों का योग 180° होता है। तीसरा कोण = 180° - (60° + 70°) = 50°।",
+      "mr": "त्रिकोणाच्या तिन्ही कोनांची बेरीज १८०° असते. तिसरा कोण = १८०° - (६०° + ७०°) = ५०°."
+    },
+    "teacher_verified": true
+  },
+  {
+    "id": "q_exp_powers_1",
+    "concept_id": "exp_powers",
+    "difficulty": 1,
+    "type": "mcq",
+    "question_text": {
+      "en": "What is the value of 3^4?",
+      "hi": "3^4 का मान क्या है?",
+      "mr": "३^४ चे मूल्य काय आहे?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": { "en": "81", "hi": "81", "mr": "८१" },
+        "is_correct": true,
+        "misconception_id": null
+      },
+      {
+        "id": "B",
+        "text": { "en": "12", "hi": "12", "mr": "१२" },
+        "is_correct": false,
+        "misconception_id": "misc_exp_multiply_base_power"
+      },
+      {
+        "id": "C",
+        "text": { "en": "27", "hi": "27", "mr": "२७" },
+        "is_correct": false,
+        "misconception_id": null
+      },
+      {
+        "id": "D",
+        "text": { "en": "64", "hi": "64", "mr": "६४" },
+        "is_correct": false,
+        "misconception_id": null
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "en": "3^4 means multiplying 3 four times: 3 * 3 * 3 * 3 = 81.",
+      "hi": "3^4 का अर्थ 3 को 4 बार गुणा करना है: 3 * 3 * 3 * 3 = 81।",
+      "mr": "३^४ म्हणजे ३ चा ४ वेळा गुणाकार: ३ * ३ * ३ * ३ = ८१."
+    },
+    "teacher_verified": true
+  }
+]
